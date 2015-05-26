@@ -192,3 +192,6 @@ else
     EDITOR=/usr/bin/mcedit  # --> Linux as usual
 fi
 export EDITOR
+
+HISTFILESIZE=1024  # --> dead braincells workaround
+#HISTFILESIZE=0    # --> disable history (paranoia)
