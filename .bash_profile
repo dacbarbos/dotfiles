@@ -155,8 +155,8 @@ if [ "$OS" = "Darwin" ]; then
 fi
 case "$OS" in
     Darwin)
-	alias la='ls -Al'
-	alias ll='ls -l'
+	alias la='ls -AlG'
+	alias ll='ls -lG'
 	alias netstat='netstat -anl -f inet'
 	alias netstat6='netstat -anl -f inet6'
 	alias grep='grep --colour'
