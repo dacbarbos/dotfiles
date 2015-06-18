@@ -141,27 +141,25 @@ alias mced='mcedit -b'
 alias sumced='sudo mcedit'
 alias h2d='printf "%d\n" ${1}'
 alias d2h='printf "0x%x\n" ${1}'
+alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias myip='curl ifconfig.me'
 alias which='type -a'
-if [ "$OS" = "Darwin" ]; then
-    alias ipcalc='sipcalc'
-    alias md5sum='cfv -C -t md5'
-    alias md5sum-c='cfv -f'
-    for i in 1 224 256 384 512; do alias sha"$i"sum='shasum -a $i'; done
-    for i in 1 224 256 384 512; do alias sha"$i"sum-c='shasum -a $i -c'; done
-    alias wget='curl -O'
-    alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
-fi
 case "$OS" in
     Darwin)
 	alias la='ls -AlG'
 	alias ll='ls -lG'
+	alias md5sum='cfv -C -t md5'
+	alias md5sum-c='cfv -f'
 	alias netstat='netstat -anl -f inet'
 	alias netstat6='netstat -anl -f inet6'
 	alias grep='grep --colour'
 	alias egrep='egrep --colour'
 	alias fgrep='fgrep --colour'
+	for i in 1 224 256 384 512; do alias sha"$i"sum='shasum -a $i'; done
+	for i in 1 224 256 384 512; do alias sha"$i"sum-c='shasum -a $i -c'; done
+	alias wget='curl -O'
+	alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
 	;;
     Linux)
 	alias la='ls -Al --color=auto'
