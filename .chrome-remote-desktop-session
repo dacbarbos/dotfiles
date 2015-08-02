@@ -1,0 +1,4 @@
+#!/bin/sh
+#https://support.google.com/chrome/answer/1649523
+exec /usr/sbin/lightdm-session "gnome-session --session=ubuntu"
+
