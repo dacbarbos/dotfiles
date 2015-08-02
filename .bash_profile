@@ -180,6 +180,9 @@ alias path='echo -e ${PATH//:/\\n}'
 
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH
+# Help Midori to find vlc-plugin
+MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
+export MOZ_PLUGIN_PATH
 
 #--------------------
 # My text editor
