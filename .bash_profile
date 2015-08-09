@@ -162,6 +162,8 @@ case "$OS" in
 	alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
 	;;
     Linux)
+	alias bb='bleachbit'
+	alias subb='sudo bleachbit'
 	alias la='ls -Al --color=auto'
 	alias ll='ls -l --color=auto'
     	alias netstat='ss -anp -f inet'
