@@ -137,6 +137,7 @@ alias mv='mv -i'
 alias mc='mc -b'
 alias mkdir='mkdir -pv'
 alias mount='mount |column -t'
+alias myip='curl ifconfig.me'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
 alias sumced='sudo mcedit'
@@ -144,7 +145,8 @@ alias h2d='printf "%d\n" ${1}'
 alias d2h='printf "0x%x\n" ${1}'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
-alias myip='curl ifconfig.me'
+alias lsuser='cut -d: -f1 /etc/passwd'
+alias userlist=lsuser
 alias which='type -a'
 case "$OS" in
     Darwin)
