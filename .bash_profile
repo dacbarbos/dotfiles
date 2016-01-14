@@ -137,7 +137,7 @@ alias mv='mv -i'
 alias mc='mc -b'
 alias mkdir='mkdir -pv'
 alias mount='mount |column -t'
-alias myip='curl ifconfig.me'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
 alias sumced='sudo mcedit'
@@ -193,7 +193,7 @@ export MOZ_PLUGIN_PATH
 # My text editor
 #--------------------
 if [ -f /opt/local/bin/mcedit ]; then
-    EDITOR=/opt/local/bin   # --> OS X with macports
+    EDITOR=/opt/local/bin/mcedit   # --> OSX with macports
 else
     EDITOR=/usr/bin/mcedit  # --> Linux as usual
 fi
