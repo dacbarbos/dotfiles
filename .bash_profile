@@ -116,6 +116,37 @@ NC="\e[m"               # Color Reset
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
 #-------------------
+# My Functions
+#-------------------
+function bpi1() {
+  echo "$Green BTC:USD Price Index by CEX.io API" && echo "$NC"
+  curl -1kL https://cex.io/api/last_price/BTC/USD && printf "\n"
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+function bpi2() {
+  echo "$Green BTC:USD Price Index by Blockchain.info API" && echo "$NC"
+  curl -1kL https://blockchain.info/ticker |jq -c '.["USD"]' |json_pp
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+function bpi3 {
+  echo "$Green BTC:USD Price Index by Coindesk.com API" && echo "$NC"
+  curl -1kL https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |json_pp
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+function ipinfo {
+  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4L http://ipinfo.io/"$1" && printf "\n"
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+function wttrin {
+  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4L http://wttr.in/"$1"
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+#-------------------
 # My Aliases
 #-------------------
 
@@ -141,8 +172,6 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
 alias sumced='sudo mcedit'
-alias h2d='printf "%d\n" ${1}'
-alias d2h='printf "0x%x\n" ${1}'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
@@ -150,34 +179,34 @@ alias userlist=lsuser
 alias which='type -a'
 case "$OS" in
     Darwin)
-	alias la='ls -AlG'
-	alias ll='ls -lG'
-	alias md5sum='cfv -C -t md5'
-	alias md5sum-c='cfv -f'
-	alias netstat='netstat -anl -f inet'
-	alias netstat6='netstat -anl -f inet6'
-	alias grep='grep --colour'
-	alias egrep='egrep --colour'
-	alias fgrep='fgrep --colour'
-	for i in 1 224 256 384 512; do alias sha"$i"sum='shasum -a $i'; done
-	for i in 1 224 256 384 512; do alias sha"$i"sum-c='shasum -a $i -c'; done
-	alias wget='curl -O'
-	alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
-	;;
+    	alias la='ls -AlG'
+    	alias ll='ls -lG'
+    	alias md5sum='cfv -C -t md5'
+    	alias md5sum-c='cfv -f'
+    	alias netstat='netstat -anl -f inet'
+    	alias netstat6='netstat -anl -f inet6'
+    	alias grep='grep --colour'
+    	alias egrep='egrep --colour'
+    	alias fgrep='fgrep --colour'
+    	for i in 1 224 256 384 512; do alias sha"$i"sum='shasum -a $i'; done
+    	for i in 1 224 256 384 512; do alias sha"$i"sum-c='shasum -a $i -c'; done
+    	alias wget='curl -O'
+    	alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
+    	;;
     Linux)
-	alias bb='bleachbit'
-	alias subb='sudo bleachbit'
-	alias la='ls -Al --color=auto'
-	alias ll='ls -l --color=auto'
-    	alias netstat='ss -anp -f inet'
-	alias netstat6='ss -anp -f inet6'
-	alias pbcopy='xsel --clipboard --input'
-	alias pbpaste='xsel --clipboard --output'
-	alias grep='grep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias wget='wget -c'
-	;;
+    	alias bb='bleachbit'
+    	alias subb='sudo bleachbit'
+    	alias la='ls -Al --color=auto'
+    	alias ll='ls -l --color=auto'
+      alias netstat='ss -anp -f inet'
+    	alias netstat6='ss -anp -f inet6'
+    	alias pbcopy='xsel --clipboard --input'
+    	alias pbpaste='xsel --clipboard --output'
+    	alias grep='grep --color=auto'
+    	alias egrep='egrep --color=auto'
+    	alias fgrep='fgrep --color=auto'
+    	alias wget='wget -c'
+    	;;
 esac
 
 # Pretty-print of some PATH variables:
@@ -189,15 +218,10 @@ export PATH
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
 
-#--------------------
-# My text editor
-#--------------------
-if [ -f /opt/local/bin/mcedit ]; then
-    EDITOR=/opt/local/bin/mcedit   # --> OSX with macports
-else
-    EDITOR=/usr/bin/mcedit  # --> Linux as usual
-fi
-export EDITOR
+#--------------------------------------------
+# If mcedit is present make it default editor
+#--------------------------------------------
+[[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
 
 HISTFILESIZE=1024  # --> dead braincells workaround
 #HISTFILESIZE=0    # --> disable history (paranoia)
