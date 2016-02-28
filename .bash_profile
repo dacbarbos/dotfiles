@@ -119,19 +119,19 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 # My Functions
 #-------------------
 function bpi1() {
-  echo "$Green BTC:USD Price Index by CEX.io API" && echo "$NC"
+  echo "BTC:USD Price Index by CEX.io API"
   curl -1kL https://cex.io/api/last_price/BTC/USD && printf "\n"
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi2() {
-  echo "$Green BTC:USD Price Index by Blockchain.info API" && echo "$NC"
+  echo "BTC:USD Price Index by Blockchain.info API"
   curl -1kL https://blockchain.info/ticker |jq -c '.["USD"]' |json_pp
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi3 {
-  echo "$Green BTC:USD Price Index by Coindesk.com API" && echo "$NC"
+  echo "BTC:USD Price Index by Coindesk.com API"
   curl -1kL https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |json_pp
   [[ $? -ne 0 ]] && return $? || return
 }
