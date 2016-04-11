@@ -152,6 +152,7 @@ function wttrin {
 
 OS=$(uname -a |egrep -io "darwin|linux" |head -1)
 alias ~='cd ~'
+alias .='pwd'
 alias ..='cd ..'
 alias c='clear'
 alias h='history'
