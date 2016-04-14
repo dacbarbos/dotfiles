@@ -47,8 +47,8 @@ doskey ..=cd..
 doskey a=doskey /m
 doskey c=cls
 doskey etc=cd %systemroot%\system32\drivers\etc
-rem gpg4win
-doskey gpg=gpg2
+rem gpg4win.org
+doskey gpg=%programfiles(x86)%\GPG\GnuPG\gpg2.exe
 doskey h=doskey /history
 doskey x=exit
 REM path to binary must be known
