@@ -29,7 +29,7 @@ doskey lsof=openfiles
 doskey lpr=print $1
 doskey minicom=mode
 doskey mv=move "$1" "$2"
-doskey parted=diskpart $1 $2 
+doskey parted=diskpart $1 $2
 doskey ps=tasklist
 doskey pwd=cd
 doskey rm=del "$1"
@@ -39,7 +39,6 @@ doskey systemctl=wmic /?
 doskey tune2fs=fsutil fsinfo $1
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
-doskey whoami=echo %username%
 
 REM minimalist
 doskey ~=cd %userprofile%
@@ -48,6 +47,8 @@ doskey ..=cd..
 doskey a=doskey /m
 doskey c=cls
 doskey etc=cd %systemroot%\system32\drivers\etc
+rem gpg4win
+doskey gpg=gpg2
 doskey h=doskey /history
 doskey x=exit
 REM path to binary must be known
