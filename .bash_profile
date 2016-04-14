@@ -222,10 +222,15 @@ export PATH
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
 
-#--------------------------------------------
-# If mcedit is present make it default editor
-#--------------------------------------------
+#---------------------------------------------
+# If mcedit is present, make it default editor
+#---------------------------------------------
 [[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
+
+#---------------------------------------------------------------
+# If a GitHub profile is present, load it (Homebrew vs MacPorts)
+#---------------------------------------------------------------
+[[ -r .github_profile ]] && source .github_profile
 
 HISTFILESIZE=1024  # --> dead braincells workaround
 #HISTFILESIZE=0    # --> disable history (paranoia)

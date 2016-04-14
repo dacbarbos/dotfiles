@@ -1,0 +1,5 @@
+# $HOME/.github_profile
+# fix error "Github API Rate limit exceeded" while brew search coffee
+# replace that dummy value on line below after cloning onto your Mac
+export HOMEBREW_GITHUB_API_TOKEN=https://github.com/settings/tokens
+# NOTE that Homebrew token should be scopeless
