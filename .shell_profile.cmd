@@ -72,5 +72,6 @@ echo [Cygwin] https://www.cygwin.com/
 echo [CoreUtils] http://gnuwin32.sourceforge.net/
 echo [UnxUtils] http://unxutils.sourceforge.net/
 echo [UUtils] https://github.com/uutils/coreutils/
+echo [Win-Bash] http://win-bash.sourceforge.net/
 
 GOTO :EOF
