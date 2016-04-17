@@ -51,6 +51,7 @@ doskey h=doskey /history
 doskey x=exit
 REM path to binary must be known
 doskey npp=notepad++ "$1"
+doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 
 GOTO :EOF
 
