@@ -120,29 +120,29 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 #-------------------
 function bpi1() {
   echo "BTC:USD Price Index by CEX.io API"
-  curl -1kL https://cex.io/api/last_price/BTC/USD && printf "\n"
+  curl -1kL# https://cex.io/api/last_price/BTC/USD && printf "\n"
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi2() {
   echo "BTC:USD Price Index by Blockchain.info API"
-  curl -1kL https://blockchain.info/ticker |jq -c '.["USD"]' |json_pp
+  curl -1kL# https://blockchain.info/ticker |jq -c '.["USD"]' |json_pp
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi3 {
   echo "BTC:USD Price Index by Coindesk.com API"
-  curl -1kL https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |json_pp
+  curl -1kL# https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |json_pp
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function ipinfo {
-  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4L http://ipinfo.io/"$1" && printf "\n"
+  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4L# http://ipinfo.io/"$1" && printf "\n"
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function wttrin {
-  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4L http://wttr.in/"$1"
+  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4L# http://wttr.in/"$1"
   [[ $? -ne 0 ]] && return $? || return
 }
 
@@ -173,6 +173,7 @@ alias mount='mount |column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
+alias alidep='echo alias dependencies: cfv, colordiff, jq, json_pp, sipcalc'
 alias sumced='sudo mcedit'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
@@ -192,8 +193,8 @@ case "$OS" in
     	alias fgrep='fgrep --colour'
     	for i in 1 224 256 384 512; do alias sha"$i"sum='shasum -a $i'; done
     	for i in 1 224 256 384 512; do alias sha"$i"sum-c='shasum -a $i -c'; done
-    	alias wget='curl -O'
-    	alias updatedb='pushd .;pushd /usr/libexec; sudo ./locate.updatedb; popd'
+    	alias wget='curl -O#'
+    	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
     	;;
     Linux)
     	alias bb='bleachbit'
