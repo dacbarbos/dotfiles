@@ -218,7 +218,7 @@ esac
 alias path='echo -e ${PATH//:/\\n}'
 
 # Augument $PATH
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/linaro/arm-none-eabi/bin/
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/linaro/bin:/usr/local/linaro/arm-linux-gnueabihf/bin
 export PATH
 
 # Help Midori to find vlc-plugin
