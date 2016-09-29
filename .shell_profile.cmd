@@ -34,6 +34,7 @@ doskey parted=diskpart $1 $2
 doskey ps=tasklist
 doskey pwd=cd
 doskey rm=del "$1"
+doskey reboot=shutdown /r /f /t 300 /c "%COMPUTERNAME% will reboot in 5 min."
 doskey rsync=robocopy "$1" "$2" "$3"
 doskey service=sc "$1" "$2"
 doskey systemctl=wmic /?
