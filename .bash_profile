@@ -222,6 +222,9 @@ alias path='echo -e ${PATH//:/\\n}'
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
 
+# Perl environment https://github.com/tokuhirom/plenv
+[[ $(command -v plenv) ]] && eval "$(plenv init -)"
+
 # Help Midori to find vlc-plugin
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
