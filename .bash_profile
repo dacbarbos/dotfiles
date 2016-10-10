@@ -119,30 +119,30 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 # My Functions
 #-------------------
 function bpi1() {
-  echo "BTC:USD Price Index by CEX.io API"
-  curl -1kL# https://cex.io/api/last_price/BTC/USD && printf "\n"
+  echo "Bitcoin Price Index by CEX.io API"
+  curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi2() {
-  echo "BTC:USD Price Index by Blockchain.info API"
-  curl -1kL# https://blockchain.info/ticker |jq -c '.["USD"]' |json_pp
+  echo "Bitcoin Price Index by Blockchain.info API"
+  curl -1kLs https://blockchain.info/ticker |jq -c '.["USD"]' |jq -r '.last' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function bpi3 {
-  echo "BTC:USD Price Index by Coindesk.com API"
-  curl -1kL# https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |json_pp
+  echo "Bitcoin Price Index by Coindesk.com API"
+  curl -1kLs https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |jq -r '.rate' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function ipinfo {
-  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4L# http://ipinfo.io/"$1" && printf "\n"
+  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4Ls http://ipinfo.io/"$1" && printf "\n"
   [[ $? -ne 0 ]] && return $? || return
 }
 
 function wttrin {
-  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4L# http://wttr.in/"$1"
+  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4Ls http://wttr.in/"$1"
   [[ $? -ne 0 ]] && return $? || return
 }
 
@@ -174,7 +174,7 @@ alias mount='mount |column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
-alias alidep='echo alias dependencies: cfv, colordiff, jq, json_pp, sipcalc, pv'
+alias alidep='echo alias dependencies: cfv, colordiff, jq, pv, sipcalc'
 alias sumced='sudo mcedit'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
@@ -188,8 +188,8 @@ case "$OS" in
       alias blkid='diskutil list'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
-    	alias netstat='netstat -anl -f inet'
-    	alias netstat6='netstat -anl -f inet6'
+    	alias netstat-l='netstat -anl -f inet'
+    	alias netstat6-l='netstat -anl -f inet6'
     	alias grep='grep --colour'
     	alias egrep='egrep --colour'
     	alias fgrep='fgrep --colour'
@@ -203,8 +203,8 @@ case "$OS" in
     	alias subb='sudo bleachbit'
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
-      alias netstat='ss -anp -f inet'
-    	alias netstat6='ss -anp -f inet6'
+      alias netstat-l='ss -anp -f inet'
+    	alias netstat6-l='ss -anp -f inet6'
     	alias pbcopy='xsel --clipboard --input'
     	alias pbpaste='xsel --clipboard --output'
     	alias grep='grep --color=auto'
@@ -225,14 +225,21 @@ export PATH
 # Perl environment https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
 
-# Help Midori to find vlc-plugin
+# Help Midori find the vlc-plugin
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
 
-#---------------------------------------------
-# If mcedit is present, make it default editor
-#---------------------------------------------
+#-----------------------------------------------------------------
+# If mcedit is present then make it my default editor or annoy me!
+#-----------------------------------------------------------------
 [[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
+if [ $(command -v select-editor) ] && [ ! -f ~/.selected_editor ]; then
+  select-editor
+elif [ $(command -v update-alternatives) ]; then
+  echo 'Default system editor configuration:'
+  update-alternatives --query editor |grep -A2 auto
+  echo '$ sudo update-alternatives --config editor'
+fi
 
 #---------------------------------------------------------------
 # If a GitHub profile is present, load it (Homebrew vs MacPorts)
