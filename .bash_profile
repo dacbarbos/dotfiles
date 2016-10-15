@@ -236,7 +236,7 @@ export MOZ_PLUGIN_PATH
 if [ $(command -v select-editor) ] && [ ! -f ~/.selected_editor ]; then
   select-editor
 elif [ $(command -v update-alternatives) ]; then
-  echo 'Default system editor configuration:'
+  echo 'Alt Editor'
   update-alternatives --query editor |grep -A2 auto
   echo '$ sudo update-alternatives --config editor'
 fi
