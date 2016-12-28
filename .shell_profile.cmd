@@ -8,6 +8,7 @@ IF NOT EXIST %systemroot%\system32\doskey.exe GOTO fail
 doskey alias=doskey /m
 doskey blkid=label
 doskey cat=type $1
+doskey cdn=cd %userprofile%\Downloads
 doskey chmod=icacls
 doskey clear=cls
 doskey cp=copy
@@ -32,12 +33,14 @@ doskey minicom=mode
 doskey mv=move "$1" "$2"
 doskey parted=diskpart $1 $2
 doskey ps=tasklist
+doskey pdn=for /f "skip=2 tokens=1-2,3 delims= " %i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v {374DE290-123F-4565-9164-39C4925E467B}') do pushd %k
 doskey pwd=cd
 doskey rm=del "$1"
 doskey reboot=shutdown /r /f /t 300 /c "%COMPUTERNAME% will reboot in 5 min."
 doskey rsync=robocopy "$1" "$2" "$3"
 doskey service=sc "$1" "$2"
 doskey systemctl=wmic /?
+doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo $1
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
@@ -51,9 +54,9 @@ doskey c=cls
 doskey etc=cd %systemroot%\system32\drivers\etc
 doskey h=doskey /history
 doskey x=exit
+
 REM path to binary must be known
 doskey npp=notepad++ "$1"
-doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 
 GOTO :EOF
 
