@@ -33,7 +33,6 @@ doskey minicom=mode
 doskey mv=move "$1" "$2"
 doskey parted=diskpart $1 $2
 doskey ps=tasklist
-doskey pdn=for /f "skip=2 tokens=1-2,3 delims= " %i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v {374DE290-123F-4565-9164-39C4925E467B}') do pushd %k
 doskey pwd=cd
 doskey rm=del "$1"
 doskey reboot=shutdown /r /f /t 300 /c "%COMPUTERNAME% will reboot in 5 min."
@@ -57,6 +56,8 @@ doskey x=exit
 
 REM path to binary must be known
 doskey npp=notepad++ "$1"
+REM true cdn (pushd instead of cd + real path to Downloads in case of redirected virtual folder location), unfortunately too complex for a doskey alias!
+REM pdn=for /f "skip=2 tokens=1-2,3 delims= " %i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v {374DE290-123F-4565-9164-39C4925E467B}') do pushd %k
 
 GOTO :EOF
 
