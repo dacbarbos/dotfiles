@@ -118,13 +118,18 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 #-------------------
 # My Functions
 #-------------------
-function bpi1() {
+function b2d {
+  [[ $# -ne 1 ]] && echo 'Usage: b2d <01001111>' || echo $((2#"$1"))
+  [[ $? -ne 0 ]] && return $? || return
+}
+
+function bpi1 {
   echo "Bitcoin Price Index by CEX.io API"
   curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 
-function bpi2() {
+function bpi2 {
   echo "Bitcoin Price Index by Blockchain.info API"
   curl -1kLs https://blockchain.info/ticker |jq -c '.["USD"]' |jq -r '.last' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
@@ -236,9 +241,9 @@ export MOZ_PLUGIN_PATH
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
 [[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
-if [ $(command -v select-editor) ] && [ ! -f ~/.selected_editor ]; then
+if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
-elif [ $(command -v update-alternatives) ]; then
+elif [ "$(command -v update-alternatives)" ]; then
   echo 'Alt Editor'
   update-alternatives --query editor |grep -A2 auto
   echo '$ sudo update-alternatives --config editor'
