@@ -213,6 +213,8 @@ case "$OS" in
     	alias subb='sudo bleachbit'
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
+      alias sc='systemctl'
+      alias scls='systemctl list-units --type=service |grep "active running|$"'
       alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
     	alias pbcopy='xsel --clipboard --input'
