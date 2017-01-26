@@ -28,6 +28,7 @@ doskey ls=dir /w
 doskey lsmod=driverquery
 doskey lsof=openfiles
 doskey lpr=print $1
+doskey man=help $1
 doskey mc=far
 doskey minicom=mode
 doskey mv=move "$1" "$2"
