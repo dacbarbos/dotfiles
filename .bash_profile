@@ -231,7 +231,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Augument $PATH
 #PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/local/bin:/opt/local/sbin
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin"
 export PATH
 
 # Perl environment https://github.com/tokuhirom/plenv
