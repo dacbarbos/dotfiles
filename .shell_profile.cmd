@@ -55,6 +55,7 @@ doskey a=doskey /m
 doskey c=cls
 doskey etc=cd %systemroot%\system32\drivers\etc
 doskey h=doskey /history
+doskey w=query user
 doskey x=exit
 
 REM path to binary must be known
