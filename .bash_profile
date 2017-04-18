@@ -231,12 +231,15 @@ esac
 alias path='echo -e ${PATH//:/\\n}'
 
 # Augument $PATH
-#PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/local/bin:/opt/local/sbin
-PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin"
+#PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin
+PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin"
 export PATH
 
 # Perl environment https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
+
+# Load RVM into a shell session *as a function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Help Midori find the vlc-plugin
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
