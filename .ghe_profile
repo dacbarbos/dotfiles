@@ -1,0 +1,9 @@
+# $HOME/.ghe_profile
+# things like enterprise CIs (Drone, Travis, etc)
+# usual scope: " repo; user:email; read:org "
+# replace that dummy value on line below after cloning
+export GHE_TOKEN=https://github.enterprise.com/settings/tokens
+# https://docs.travis-ci.com/user/deployment/releases/#Deploying-to-GitHub-Enterprise
+# worthy alternative?!
+# readonly GHE_TOKEN=https://github.enterprise.com/settings/tokens
+# http://stackoverflow.com/questions/13404665/use-of-read-only-variables-in-shell-scripts
