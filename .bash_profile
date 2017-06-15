@@ -253,7 +253,7 @@ if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
 elif [ "$(command -v alternatives)" ]; then
   echo 'Alt Editor'
-  alternatives --show editor |grep -A2 auto
+  alternatives --display editor |grep -A2 auto
   echo '$ sudo alternatives --config editor'
 fi
 
