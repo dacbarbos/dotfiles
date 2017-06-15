@@ -251,10 +251,10 @@ export MOZ_PLUGIN_PATH
 [[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
-elif [ "$(command -v update-alternatives)" ]; then
+elif [ "$(command -v alternatives)" ]; then
   echo 'Alt Editor'
-  update-alternatives --query editor |grep -A2 auto
-  echo '$ sudo update-alternatives --config editor'
+  alternatives --show editor |grep -A2 auto
+  echo '$ sudo alternatives --config editor'
 fi
 
 #---------------------------------------------------------------
