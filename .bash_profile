@@ -257,6 +257,15 @@ elif [ "$(command -v alternatives)" ]; then
   echo '$ sudo alternatives --config editor'
 fi
 
+#--------------------------------------------------------------
+# Remind me to install https://github.com/KittyKatt/screenFetch
+#--------------------------------------------------------------
+if [ "$(command -v screenfetch)" ]; then
+  screenfetch
+else
+  echo 'TIP: install screenfetch and forget issue/motd files'
+fi
+
 #---------------------------------------------------------------
 # If a GitHub profile is present, load it (fix Homebrew on Mac)
 #---------------------------------------------------------------
