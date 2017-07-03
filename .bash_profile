@@ -183,12 +183,13 @@ alias mount='mount |column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
-alias alidep='echo alias dependencies: cfv, colordiff, hub, jq, pv, sipcalc'
+alias alidep='echo alias dependencies: bleachbit, cfv, colordiff, curl, hub, jq, pv, sipcalc'
 alias sumced='sudo mcedit'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
 alias userlist=lsuser
+alias wget='curl -kLO#'
 alias which='type -a'
 case "$OS" in
     Darwin)
@@ -206,7 +207,6 @@ case "$OS" in
     	alias fgrep='fgrep --colour'
     	for i in 1 224 256 384 512; do alias sha"$i"sum="shasum -a $i"; done
     	for i in 1 224 256 384 512; do alias sha"$i"sum-c="shasum -a $i -c"; done
-    	alias wget='curl -kLO#'
     	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
     	;;
     Linux)
@@ -215,15 +215,15 @@ case "$OS" in
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
       alias sc='systemctl'
-      alias scq='systemctl list-units --type=service |grep "active running|$"'
+      alias scq='systemctl list-units --type=service |more'
       alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
     	alias pbcopy='xsel --clipboard --input'
     	alias pbpaste='xsel --clipboard --output'
-    	alias grep='grep --color=auto'
+      alias free='free -mt'
+      alias grep='grep --color=auto'
     	alias egrep='egrep --color=auto'
     	alias fgrep='fgrep --color=auto'
-    	alias wget='wget -c'
     	;;
 esac
 
