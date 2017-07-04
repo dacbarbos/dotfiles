@@ -219,6 +219,7 @@ case "$OS" in
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
     	alias sc='systemctl'
+      alias sce='sudo crontab -e'
     	alias scq='systemctl list-units --type=service |more'
     	alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
