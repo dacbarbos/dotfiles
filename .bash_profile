@@ -257,7 +257,7 @@ if [ $(command -v mcedit) ]]; then
   export EDITOR="$(command -pv mcedit)"
   export VISUAL=$EDITOR
   export SUDO_EDITOR=$EDITOR
-fi
+  echo 'TIP: if mcedit is NOT working with sce|sue|suvi, see https://goo.gl/vqiGQK'fi
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
 elif [ "$(command -v alternatives)" ]; then
