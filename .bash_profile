@@ -181,6 +181,7 @@ alias git='hub'
 alias mkdir='mkdir -pv'
 alias mount='mount |column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias sui='sudo -i'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
 alias alidep='echo alias dependencies: bleachbit, cfv, colordiff, curl, hub, jq, pv, sipcalc'
@@ -249,7 +250,7 @@ export MOZ_PLUGIN_PATH
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
-[[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)" && export EDITOR
+[[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)"; VISUAL=$EDITOR; SUDO_EDITOR=$EDITOR && export EDITOR
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
 elif [ "$(command -v alternatives)" ]; then
