@@ -207,6 +207,7 @@ case "$OS" in
     	alias fgrep='fgrep --colour'
     	for i in 1 224 256 384 512; do alias sha"$i"sum="shasum -a $i"; done
     	for i in 1 224 256 384 512; do alias sha"$i"sum-c="shasum -a $i -c"; done
+      alias shortcuts='open https://support.apple.com/en-us/HT201236'
     	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
     	;;
     Linux)
