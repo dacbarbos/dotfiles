@@ -250,6 +250,15 @@ export PATH
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
 
+#--------------------------------------------------------------
+# Remind me to install https://github.com/KittyKatt/screenFetch
+#--------------------------------------------------------------
+if [ "$(command -v screenfetch)" ]; then
+  screenfetch
+else
+  echo 'TIP: install screenfetch and forget issue/motd files'
+fi
+
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
@@ -258,6 +267,7 @@ if [ $(command -v mcedit) ]]; then
   export VISUAL=$EDITOR
   export SUDO_EDITOR=$EDITOR
   echo 'TIP: if mcedit is NOT working with sce|sue|suvi, see https://goo.gl/vqiGQK'
+  echo 'SEC: check also env_editor in man sudoers to get the full picture on sue|suvi'
 fi
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
@@ -265,15 +275,6 @@ elif [ "$(command -v alternatives)" ]; then
   echo 'Alternative Editor'
   alternatives --display editor |grep -A2 auto
   echo '$ sudo alternatives --config editor'
-fi
-
-#--------------------------------------------------------------
-# Remind me to install https://github.com/KittyKatt/screenFetch
-#--------------------------------------------------------------
-if [ "$(command -v screenfetch)" ]; then
-  screenfetch
-else
-  echo 'TIP: install screenfetch and forget issue/motd files'
 fi
 
 #---------------------------------------------------------------
