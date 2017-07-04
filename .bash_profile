@@ -222,8 +222,8 @@ case "$OS" in
     	alias netstat6-l='ss -anp -f inet6'
     	alias pbcopy='xsel --clipboard --input'
     	alias pbpaste='xsel --clipboard --output'
-      alias free='free -mt'
-      alias grep='grep --color=auto'
+    	alias free='free -mt'
+    	alias grep='grep --color=auto'
     	alias egrep='egrep --color=auto'
     	alias fgrep='fgrep --color=auto'
     	;;
