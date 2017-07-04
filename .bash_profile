@@ -196,9 +196,9 @@ case "$OS" in
     Darwin)
     	alias la='ls -AlG'
     	alias ll='ls -lG'
-      alias plb='/usr/libexec/PlistBuddy'
-      alias plu='plutil'
-      alias blkid='diskutil list'
+    	alias plb='/usr/libexec/PlistBuddy'
+    	alias plu='plutil'
+    	alias blkid='diskutil list'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
     	alias netstat-l='netstat -anl -f inet'
