@@ -275,6 +275,10 @@ elif [ "$(command -v alternatives)" ]; then
   echo 'Alternative Editor'
   alternatives --display editor |grep -A2 auto
   echo '$ sudo alternatives --config editor'
+elif [ "$(command -v update-alternatives)" ]; then
+  echo 'Alternative Editor'
+  update-alternatives --display editor |grep -A2 auto
+echo '$ sudo update-alternatives --config editor'
 fi
 
 #---------------------------------------------------------------
