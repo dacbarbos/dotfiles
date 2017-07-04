@@ -262,7 +262,7 @@ fi
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
-if [ $(command -v mcedit) ]]; then
+if [ $(command -v mcedit) ]; then
   export EDITOR="$(command -pv mcedit)"
   export VISUAL=$EDITOR
   export SUDO_EDITOR=$EDITOR
