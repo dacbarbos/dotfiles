@@ -252,11 +252,15 @@ export MOZ_PLUGIN_PATH
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
-[[ $(command -v mcedit) ]] && EDITOR="$(command -pv mcedit)"; VISUAL=$EDITOR; SUDO_EDITOR=$EDITOR && export EDITOR
+if [ $(command -v mcedit) ]]; then
+  export EDITOR="$(command -pv mcedit)"
+  export VISUAL=$EDITOR
+  export SUDO_EDITOR=$EDITOR
+fi
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
   select-editor
 elif [ "$(command -v alternatives)" ]; then
-  echo 'Alt Editor'
+  echo 'Alternative Editor'
   alternatives --display editor |grep -A2 auto
   echo '$ sudo alternatives --config editor'
 fi
