@@ -16,5 +16,5 @@ startup_message off
 shell -$SHELL
 
 # auto-log
-logfile $HOME/lib/screen-logs/%Y%m%d-%n.log
+logfile $HOME/.local/var/screen-logs/%Y%m%d-%n.log
 deflog on
