@@ -193,6 +193,7 @@ alias mc='mc -b'
 alias pv='pv -p'
 alias mkdir='mkdir -pv'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias path='echo -e ${PATH//:/\\n}'
 alias sue='sudo -e'
 alias sui='sudo -i'
 alias suvi='sudo visudo'
@@ -244,9 +245,6 @@ case "$OS" in
     	alias fgrep='fgrep --color=auto'
     	;;
 esac
-
-# Pretty-print of some PATH variables:
-alias path='echo -e ${PATH//:/\\n}'
 
 # Augument $PATH
 #PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin
