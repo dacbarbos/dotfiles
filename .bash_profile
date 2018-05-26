@@ -1,4 +1,6 @@
-# $HOME/.bash_profile
+#!/bin/env bash
+#$HOME/.bash_profile || $HOME/.bashrc
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -7,7 +9,7 @@
 # then automatically put us into a screen(1) session.   Only try once
 # -- if $STARTED_SCREEN is set, don't try it again, to avoid looping
 # if screen fails for some reason.
-if [ "$PS1" != "" -a "${STARTED_SCREEN:-x}" = x -a "${SSH_TTY:-x}" != x ]
+if [ "$PS1" != "" ] && [ "${STARTED_SCREEN:-x}" = x ] && [ "${SSH_TTY:-x}" != x ]
 then
   STARTED_SCREEN=1 ; export STARTED_SCREEN
   [ -d $HOME/.local/var/screen-logs ] || mkdir -p $HOME/.local/var/screen-logs
@@ -20,7 +22,7 @@ fi
 #-------------------------------------------------------------
 # Source global definitions (if any)
 #-------------------------------------------------------------
-
+# shellcheck source=/dev/null
 if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
@@ -97,38 +99,64 @@ unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
 # hence the 'Green' 'BRed' 'Red' sequence I often use in my prompt.
 
 # Normal Colors
-Black='\e[0;30m'        # Black
-Red='\e[0;31m'          # Red
-Green='\e[0;32m'        # Green
-Yellow='\e[0;33m'       # Yellow
-Blue='\e[0;34m'         # Blue
-Purple='\e[0;35m'       # Purple
-Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+Black='\e[0;30m'
+export Black
+Red='\e[0;31m'
+export Red
+Green='\e[0;32m'
+export Green
+Yellow='\e[0;33m'
+export Yellow
+Blue='\e[0;34m'
+export Blue
+Purple='\e[0;35m'
+export Purple
+Cyan='\e[0;36m'
+export Cyan
+White='\e[0;37m'
+export White
 
 # Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+BBlack='\e[1;30m'
+export BBlack
+BRed='\e[1;31m'
+export BRed
+BGreen='\e[1;32m'
+export BGreen
+BYellow='\e[1;33m'
+export BYellow
+BBlue='\e[1;34m'
+export BBlue
+BPurple='\e[1;35m'
+export BPurple
+BCyan='\e[1;36m'
+export BCyan
+BWhite='\e[1;37m'
+export BWhite
 
 # Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+On_Black='\e[40m'
+export On_Black
+On_Red='\e[41m'
+export On_Red
+On_Green='\e[42m'
+export On_Green
+On_Yellow='\e[43m'
+export On_Yellow
+On_Blue='\e[44m'
+export On_Blue
+On_Purple='\e[45m'
+export On_Purple
+On_Cyan='\e[46m'
+export On_Cyan
+On_White='\e[47m'
+export On_White
 
-NC="\e[m"               # Color Reset
+NC="\e[m"	# Color Reset
+export NC
 
 ALERT=${BWhite}${On_Red} # Bold White on red background
+export ALERT
 
 #-------------------
 # My Functions
@@ -137,124 +165,65 @@ function b2d {
   [[ $# -ne 1 ]] && echo 'Usage: b2d <01001111>' || echo $((2#"$1"))
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f b2d
 
 function bpi1 {
   echo "Bitcoin Price Index by CEX.io API"
   curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f bpi1
 
 function bpi2 {
   echo "Bitcoin Price Index by Blockchain.info API"
   curl -1kLs https://blockchain.info/ticker |jq -c '.["USD"]' |jq -r '.last' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f bpi2
 
 function bpi3 {
   echo "Bitcoin Price Index by Coindesk.com API"
   curl -1kLs https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |jq -r '.rate' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f bpi3
 
 function ipinfo {
   [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4Ls http://ipinfo.io/"$1" && printf "\n"
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f ipinfo
 
 function wttrin {
   [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4Ls http://wttr.in/"$1"
   [[ $? -ne 0 ]] && return $? || return
 }
+export -f wttrin
 
 #-------------------
 # My Aliases
 #-------------------
 
 OS=$(uname -a |egrep -io "darwin|linux" |head -1)
-alias ~='cd ~'
-alias .='pwd'
-alias ..='cd ..'
-alias a='alias'
-alias c='clear'
-alias h='history'
-alias j='jobs -l'
-alias x='exit'
-alias bc='bc -l'
-alias bpi='for i in {1..3}; do bpi$i; done'
-alias cdn='cd $HOME/Downloads'
-alias du='du -kh'
-alias df='df -kh'
-alias diff='colordiff'
-alias lh='find . -maxdepth 1 -name ".*" -ls'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias mc='mc -b'
-alias pv='pv -p'
-alias mkdir='mkdir -pv'
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias path='echo -e ${PATH//:/\\n}'
-alias sue='sudo -e'
-alias sui='sudo -i'
-alias suvi='sudo visudo'
-alias sumc='sudo mc'
-alias mced='mcedit -b'
-alias alidep='echo alias dependencies: bleachbit, cfv, colordiff, curl, hub, jq, pv, sipcalc'
-alias sumced='sudo mcedit'
-alias ipcalc='sipcalc'
-alias lsnc='sudo lsof -n -P -i +c 15'
-alias lsuser='cut -d: -f1 /etc/passwd'
-alias userlist=lsuser
-alias wget='curl -kLO#'
-alias which='type -a'
-case "$OS" in
-    Darwin)
-    	alias la='ls -AlG'
-    	alias ll='ls -lG'
-    	alias plb='/usr/libexec/PlistBuddy'
-    	alias plu='plutil'
-    	alias blkid='diskutil list'
-    	alias md5sum='cfv -C -t md5'
-    	alias md5sum-c='cfv -f'
-    	alias netstat-l='netstat -anl -f inet'
-    	alias netstat6-l='netstat -anl -f inet6'
-    	alias git='hub'
-    	alias grep='grep --colour'
-    	alias egrep='egrep --colour'
-    	alias fgrep='fgrep --colour'
-    	for i in 1 224 256 384 512; do alias sha"$i"sum="shasum -a $i"; done
-    	for i in 1 224 256 384 512; do alias sha"$i"sum-c="shasum -a $i -c"; done
-    	alias shortcuts='open https://support.apple.com/en-us/HT201236'
-    	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
-    	;;
-    Linux)
-    	alias bb='bleachbit'
-    	alias subb='sudo bleachbit'
-    	alias la='ls -Al --color=auto'
-    	alias ll='ls -l --color=auto'
-    	alias sc='systemctl'
-    	alias sce='sudo crontab -e'
-    	alias scq='systemctl list-units --type=service |more'
-    	alias netstat-l='ss -anp -f inet'
-    	alias netstat6-l='ss -anp -f inet6'
-    	alias pbcopy='xsel --clipboard --input'
-    	alias pbpaste='xsel --clipboard --output'
-    	alias free='free -mt'
-    	alias grep='grep --color=auto'
-    	alias egrep='egrep --color=auto'
-    	alias fgrep='fgrep --color=auto'
-    	;;
-esac
+export OS	# we check this in $HOME/.bash_aliases, sourced next.
+
+#-------------------------------------------------------------
+# Source local definitions (if any)
+#-------------------------------------------------------------
+# shellcheck source=/dev/null
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases  # --> Read $HOME/.bash_aliases, if present.
+fi
 
 # Augument $PATH
-#PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/opt/local/bin:/opt/local/sbin
-PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/sbin"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
 
 # Perl environment https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
 
 # Load RVM into a shell session *as a function
+# shellcheck source=/dev/null
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Help Midori find the vlc-plugin
@@ -273,10 +242,13 @@ fi
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
-if [ $(command -v mcedit) ]; then
-  export EDITOR="$(command -pv mcedit)"
-  export VISUAL=$EDITOR
-  export SUDO_EDITOR=$EDITOR
+if [ "$(command -v mcedit)" ]; then
+  EDITOR="$(command -pv mcedit)"
+	export EDITOR
+  VISUAL="$EDITOR"
+	export VISUAL
+  SUDO_EDITOR="$EDITOR"
+	export SUDO_EDITOR
   echo 'TIP: if mcedit is NOT working with sce|sue|suvi, see https://goo.gl/vqiGQK'
   echo 'SEC: check also env_editor in man sudoers to get the full picture on sue|suvi'
 fi
