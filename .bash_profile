@@ -270,6 +270,8 @@ fi
 [[ -r .gh_profile ]] && source .gh_profile
 # Add/append GHE stuff as well
 [[ -r .ghe_profile ]] && source .ghe_profile
+# Add/append SL stuff as well
+[[ -r .sl_profile ]] && source .sl_profile
 
 HISTFILESIZE=1024  # --> dead braincells workaround
 #HISTFILESIZE=0    # --> disable history (paranoia)
