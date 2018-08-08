@@ -1,0 +1,3 @@
+# see http://softlayer-python.readthedocs.io/en/latest/config_file.html
+export SL_USERNAME=
+export SL_API_KEY=
