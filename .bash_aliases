@@ -69,8 +69,8 @@ case "$OS" in
     	alias grep='grep --colour'
     	alias egrep='egrep --colour'
     	alias fgrep='fgrep --colour'
-    	for i in 1 224 256 384 512; do alias sha"$i"sum="shasum -a $i"; done
-    	for i in 1 224 256 384 512; do alias sha"$i"sum-c="shasum -a $i -c"; done
+    	alias sha256sum='shasum -a 256'
+    	alias sha256sum-c='shasum -a 256 -c'
     	alias shortcuts='open https://support.apple.com/en-us/HT201236'
     	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
     	;;
