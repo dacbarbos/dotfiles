@@ -60,6 +60,7 @@ case "$OS" in
     	alias ll='ls -lG'
     	alias plb='/usr/libexec/PlistBuddy'
     	alias plu='plutil'
+      alias top='top -o cpu'
     	alias blkid='diskutil list'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
