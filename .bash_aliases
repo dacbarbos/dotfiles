@@ -83,6 +83,7 @@ case "$OS" in
     	alias sc='systemctl'
     	alias sce='sudo crontab -e'
     	alias scq='systemctl list-units --type=service |more'
+      alias top'htop'
     	alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
     	alias pbcopy='xsel --clipboard --input'
