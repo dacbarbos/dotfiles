@@ -29,6 +29,7 @@ alias bpi='for i in {1..3}; do bpi$i; done'
 alias cdn='cd $HOME/Downloads'
 alias lzd='lazydocker'
 alias lzg='lazygit'
+alias pip='pip3'
 alias sman='man screen'
 alias sls='screen -ls'
 s() { kill -s stop $1; }
