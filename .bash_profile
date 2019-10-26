@@ -231,7 +231,9 @@ MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 export MOZ_PLUGIN_PATH
 
 # From gist thread https://git.io/Je8zO
-export GPG_TTY=$(tty)
+# Windows 10 http://bit.ly/2PnlJmS
+GPG_TTY=$(tty)
+export GPG_TTY
 
 #--------------------------------------------------------------
 # Remind me to install https://github.com/KittyKatt/screenFetch
