@@ -56,6 +56,7 @@ alias lsuser='cut -d: -f1 /etc/passwd'
 alias userlist=lsuser
 alias wget='curl -kLO#'
 alias which='type -a'
+# git multiuser myself https://bit.ly/2K1sWpj
 alias ggu-name='git config --global user.name'
 alias ggu-email='git config --global user.email'
 alias glu-name='git config --local user.name'
