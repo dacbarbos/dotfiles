@@ -216,15 +216,14 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Augument $PATH
-PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
 
 # Perl environment https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
 
-# Load RVM into a shell session *as a function
-# shellcheck source=/dev/null
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Ruby environment https://github.com/rbenv/rbenv
+[[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
 # Help Midori find the vlc-plugin
 MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
