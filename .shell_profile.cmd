@@ -36,6 +36,7 @@ doskey mc=far
 doskey minicom=mode
 doskey mv=move "$1" "$2"
 doskey myip=ipconfig /all |find /i "pref"
+doskey npp=notepad++ "$1"
 doskey parted=diskpart $1 $2
 doskey ps=tasklist
 doskey pwd=cd
@@ -62,8 +63,6 @@ doskey m=more
 doskey w=query user
 doskey x=exit
 
-REM path to binary must be known
-doskey npp=notepad++ "$1"
 REM true cdn (pushd instead of cd + real path to Downloads in case of redirected virtual folder location), unfortunately too complex for a doskey alias!
 REM pdn=for /f "skip=2 tokens=1-2,3 delims= " %i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v {374DE290-123F-4565-9164-39C4925E467B}') do pushd %k
 
