@@ -52,7 +52,6 @@ doskey tune2fs=fsutil fsinfo $1
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
 
-REM minimalist
 doskey ~=cd %userprofile%
 doskey .=cd
 doskey ..=cd..
@@ -62,9 +61,6 @@ doskey h=doskey /history
 doskey m=more
 doskey w=query user
 doskey x=exit
-
-REM true cdn (pushd instead of cd + real path to Downloads in case of redirected virtual folder location), unfortunately too complex for a doskey alias!
-REM pdn=for /f "skip=2 tokens=1-2,3 delims= " %i in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /v {374DE290-123F-4565-9164-39C4925E467B}') do pushd %k
 
 GOTO :EOF
 
