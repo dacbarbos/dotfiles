@@ -62,6 +62,7 @@ doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo $1
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
+doskey which=where $1
 
 GOTO :EOF
 
