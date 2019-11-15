@@ -30,7 +30,6 @@ doskey etc=cd %systemroot%\system32\drivers\etc
 doskey edenv=rundll32 sysdm.cpl,EditEnvironmentVariables
 doskey fsck=chkdsk
 doskey grep=findstr "$1" "$2" "$3"
-doskey history=doskey /history
 doskey id=net user %username%
 doskey ifconfig=ipconfig /all
 doskey ip=netsh ?
