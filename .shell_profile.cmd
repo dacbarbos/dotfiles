@@ -27,6 +27,7 @@ doskey crontab-l=schtasks /query /?
 doskey crontab-e=schtasks /change /?
 doskey diff=fc $1 $2
 doskey etc=cd %systemroot%\system32\drivers\etc
+doskey edenv=rundll32 sysdm.cpl,EditEnvironmentVariables
 doskey fsck=chkdsk
 doskey grep=findstr "$1" "$2" "$3"
 doskey history=doskey /history
