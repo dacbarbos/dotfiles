@@ -5,6 +5,16 @@ IF "%1" == "/h" GOTO howto
 IF "%1" == "-h" GOTO howto
 IF NOT EXIST %systemroot%\system32\doskey.exe GOTO fail
 
+doskey ~=cd %userprofile%
+doskey .=cd
+doskey ..=cd..
+doskey a=doskey /m
+doskey c=cls
+doskey h=doskey /history
+doskey m=more
+doskey w=query user
+doskey x=exit
+REM #################################
 doskey alias=doskey /m
 doskey blkid=label
 doskey cat=type $1
@@ -51,16 +61,6 @@ doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo $1
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
-
-doskey ~=cd %userprofile%
-doskey .=cd
-doskey ..=cd..
-doskey a=doskey /m
-doskey c=cls
-doskey h=doskey /history
-doskey m=more
-doskey w=query user
-doskey x=exit
 
 GOTO :EOF
 
