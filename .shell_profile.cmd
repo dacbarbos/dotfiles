@@ -15,6 +15,7 @@ doskey m=more
 doskey w=query user
 doskey x=exit
 REM #################################
+doskey alidep=echo "alias dependencies: far, git, notepad++, where"
 doskey blkid=label
 doskey cat=type $1
 doskey cdn=cd %userprofile%\Downloads
