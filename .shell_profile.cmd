@@ -15,7 +15,6 @@ doskey m=more
 doskey w=query user
 doskey x=exit
 REM #################################
-doskey alias=doskey /m
 doskey blkid=label
 doskey cat=type $1
 doskey cdn=cd %userprofile%\Downloads
