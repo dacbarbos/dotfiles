@@ -234,13 +234,13 @@ export MOZ_PLUGIN_PATH
 GPG_TTY=$(tty)
 export GPG_TTY
 
-#--------------------------------------------------------------
-# Remind me to install https://github.com/KittyKatt/screenFetch
-#--------------------------------------------------------------
-if [ "$(command -v screenfetch)" ]; then
-  screenfetch
+#----------------------------------------------------------
+# Remind me to install https://github.com/dylanaraps/pfetch
+#----------------------------------------------------------
+if [ "$(command -v pfetch)" ]; then
+  pfetch
 else
-  echo 'TIP: install screenfetch and forget issue/motd files'
+  echo 'TIP: install pfetch and forget issue/motd files'
 fi
 
 #-----------------------------------------------------------------
