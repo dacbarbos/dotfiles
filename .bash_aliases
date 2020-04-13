@@ -81,6 +81,7 @@ case "$OS" in
     	alias sha256sum-c='shasum -a 256 -c'
     	alias shortcuts='open https://support.apple.com/en-us/HT201236'
     	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
+      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
     	;;
     Linux)
     	alias bb='bleachbit'
