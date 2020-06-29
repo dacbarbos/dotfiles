@@ -184,8 +184,9 @@ function bpi3 {
 export -f bpi3
 
 function ipinfo {
-  [[ $# -ne 1 ]] && echo 'Usage: ipinfo <ip4addr>' || curl -4Ls http://ipinfo.io/"$1" && printf "\n"
-  [[ $? -ne 0 ]] && return $? || return
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
+  curl -4Ls http://ipinfo.io/${1} && printf "\n"
+  [[ $? -ne 0 ]] && return $?
 }
 export -f ipinfo
 
