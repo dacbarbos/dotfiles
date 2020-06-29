@@ -68,6 +68,7 @@ case "$OS" in
     	alias plu='plutil'
       alias top='top -o cpu'
     	alias blkid='diskutil list'
+      alias mac='brew info m-cli'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
     	alias netstat-l='netstat -anl -f inet'
