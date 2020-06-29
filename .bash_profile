@@ -161,11 +161,6 @@ export ALERT
 #-------------------
 # My Functions
 #-------------------
-function b2d {
-  [[ $# -ne 1 ]] && echo 'Usage: b2d <01001111>' || echo $((2#"$1"))
-  [[ $? -ne 0 ]] && return $? || return
-}
-export -f b2d
 
 function bpi1 {
   echo "Bitcoin Price Index by CEX.io API"
