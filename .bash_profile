@@ -190,8 +190,9 @@ function ipinfo {
 export -f ipinfo
 
 function wttrin {
-  [[ $# -ne 1 ]] && echo 'Usage: wttrin <cityname>' || curl -4Ls http://wttr.in/"$1"
-  [[ $? -ne 0 ]] && return $? || return
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <cityname>"; return 1; }
+  curl -4Ls http://wttr.in/${1}
+  [[ $? -ne 0 ]] && return $?
 }
 export -f wttrin
 
