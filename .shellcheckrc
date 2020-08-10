@@ -1,0 +1,4 @@
+#$HOME/.shellcheckrc
+# See https://github.com/koalaman/shellcheck/wiki/Ignore
+
+disable=SC2128  # thrown due to use of ${FUNCNAME}
