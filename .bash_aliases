@@ -99,5 +99,10 @@ case "$OS" in
     	alias grep='grep --color=auto'
     	alias egrep='egrep --color=auto'
     	alias fgrep='fgrep --color=auto'
+      # Make sense when using flatpak version on Fedora
+      if [ -f /etc/os-release ]; then
+          osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
+          if [ "$ostr" = fedora ]; then alias atom='flatpak run io.atom.Atom' ;fi
+      fi
     	;;
 esac
