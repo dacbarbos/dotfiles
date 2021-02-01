@@ -48,7 +48,7 @@ alias sui='sudo -i'
 alias suvi='sudo visudo'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
-alias alidep='echo alias dependencies: bleachbit, cfv, colordiff, curl, git, hub, json_pp, jq, lazygit, lazydocker, pv, screen, sipcalc'
+alias alidep='echo alias dependencies: cfv, colordiff, curl, git, hub, json_pp, jq, lazygit, lazydocker, pv, screen, sipcalc'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
@@ -85,8 +85,6 @@ case "$OS" in
       export RUBY_CONFIGURE_OPTS
     	;;
     Linux)
-    	alias bb='bleachbit'
-    	alias subb='sudo bleachbit'
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
     	alias sc='systemctl'
