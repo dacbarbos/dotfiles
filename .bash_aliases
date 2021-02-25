@@ -73,7 +73,6 @@ case "$OS" in
     	alias md5sum-c='cfv -f'
     	alias netstat-l='netstat -anl -f inet'
     	alias netstat6-l='netstat -anl -f inet6'
-    	alias git='hub'
     	alias grep='grep --colour'
     	alias egrep='egrep --colour'
     	alias fgrep='fgrep --colour'
