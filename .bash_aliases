@@ -59,7 +59,7 @@ alias which='type -a'
 alias ggu-name='git config --global user.name'
 alias ggu-email='git config --global user.email'
 alias glu-name='git config --local user.name'
-alias glu-mail='git config --local user.email'
+alias glu-email='git config --local user.email'
 case "$OS" in
     Darwin)
     	alias la='ls -AlG'
