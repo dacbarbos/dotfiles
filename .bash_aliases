@@ -63,7 +63,7 @@ alias glu-email='git config --local user.email'
 # git multiuser signing https://bit.ly/2ZLM69V
 alias ggu-gpgprog='git config --global gpg.program'
 alias ggu-gpgskey='git config --global user.signingkey'
-alias glu-gpgskey='git config --global user.signingkey'
+alias glu-gpgskey='git config --local user.signingkey'
 case "$OS" in
     Darwin)
     	alias la='ls -AlG'
