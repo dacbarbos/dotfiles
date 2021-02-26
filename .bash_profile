@@ -241,7 +241,7 @@ export OS	# we check this in $HOME/.bash_aliases, sourced next.
 #-------------------------------------------------------------
 # shellcheck source=/dev/null
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases  # --> Read $HOME/.bash_aliases, if present.
+    . ~/.bash_aliases
 fi
 
 # Augument $PATH
