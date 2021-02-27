@@ -89,6 +89,9 @@ case "$OS" in
     	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
       RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
       export RUBY_CONFIGURE_OPTS
+      NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
+      # Should match a JIM approved version https://ibm.biz/BdfiBN
+      export PATH="$NPM_HOME:$PATH"
     	;;
     Linux)
     	alias la='ls -Al --color=auto'
