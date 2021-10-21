@@ -244,6 +244,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# init Homebrew in Linux if present
+if [ "$OS" == "linux" ] && [ -d /home/linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Augument $PATH
 PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
