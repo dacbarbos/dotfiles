@@ -1,5 +1,4 @@
-#!/bin/env bash
-#$HOME/.bash_profile || $HOME/.bashrc
+### man bash (init files)
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
