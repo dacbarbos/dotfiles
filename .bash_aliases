@@ -1,5 +1,4 @@
-#!/bin/env bash
-#$HOME/.bash_aliases
+### man bash (init files)
 alias ~='cd ~'
 alias .='pwd'
 alias ..='cd ..'
