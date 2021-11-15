@@ -161,38 +161,6 @@ export ALERT
 # My Functions
 #-------------------
 
-function rc-currency {
-  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <CountryCurrency>"; return 1; }
-  echo "Querying RestCountries.eu API for ${1}"
-  curl -1kLs https://restcountries.eu/rest/v2/currency/${1} |json_pp
-  [[ $? -ne 0 ]] && return $?
-}
-export -f rc-currency
-
-function rc-name {
-  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <CountryName>"; return 1; }
-  echo "Querying RestCountries.eu API for ${1}"
-  curl -1kLs https://restcountries.eu/rest/v2/name/${1} |json_pp
-  [[ $? -ne 0 ]] && return $?
-}
-export -f rc-name
-
-function rc-isocc {
-  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <CountryLtrCode>"; return 1; }
-  echo "Querying RestCountries.eu API for ${1}"
-  curl -1kLs https://restcountries.eu/rest/v2/alpha/${1} |json_pp
-  [[ $? -ne 0 ]] && return $?
-}
-export -f rc-isocc
-
-function rc-isotel {
-  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <CountryTelCode>"; return 1; }
-  echo "Querying RestCountries.eu API for ${1}"
-  curl -1kLs https://restcountries.eu/rest/v2/callingcode/${1} |json_pp
-  [[ $? -ne 0 ]] && return $?
-}
-export -f rc-isotel
-
 function bpi1 {
   echo "Bitcoin Price Index by CEX.io API"
   curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
