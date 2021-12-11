@@ -241,6 +241,10 @@ export TK_SILENCE_DEPRECATION
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# git-credential-manager
+# https://git.io/JD3BE
+GCM_CREDENTIAL_STORE=cache
+
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
 #----------------------------------------------------------
