@@ -72,9 +72,9 @@ case "$OS" in
     	alias ll='ls -lG'
     	alias plb='/usr/libexec/PlistBuddy'
     	alias plu='plutil'
-      alias top='top -o cpu'
+	alias top='top -o cpu'
     	alias blkid='diskutil list'
-      alias mac='brew info m-cli'
+	alias mac='brew info m-cli'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
     	alias netstat-l='netstat -anl -f inet'
@@ -101,19 +101,24 @@ case "$OS" in
 	alias top='htop'
     	alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
-    	alias pbcopy='xsel --clipboard --input'
-    	alias pbpaste='xsel --clipboard --output'
+	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    	    alias pbcopy='wl-copy'
+    	    alias pbpaste='wl-paste'
+    	else
+    	    alias pbcopy='xsel --clipboard --input'
+    	    alias pbpaste='xsel --clipboard --output'
+    	fi
     	alias free='free -mt'
     	alias grep='grep --color=auto'
     	alias egrep='egrep --color=auto'
     	alias fgrep='fgrep --color=auto'
-      # Make sense when using flatpak version on Fedora
-      if [ -f /etc/os-release ]; then
-          osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
-          if [ "$ostr" = fedora ]; then \
-          alias atom='flatpak run io.atom.Atom' && \
-          alias github='flatpak run io.github.shiftey.Desktop'; \
-          fi
-      fi
+	# Make sense when using flatpak version on Fedora
+	if [ -f /etc/os-release ]; then
+    	    osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
+    	    if [ "$ostr" = fedora ]; then \
+    		alias atom='flatpak run io.atom.Atom' && \
+    		alias github='flatpak run io.github.shiftey.Desktop'; \
+    	    fi
+	fi
     	;;
 esac
