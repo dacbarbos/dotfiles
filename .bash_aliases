@@ -24,7 +24,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mc='mc -b'
 alias pv='pv -p'
-alias bpi='for i in {1..3}; do bpi$i; done'
 alias cdn='cd $HOME/Downloads'
 alias lzd='lazydocker'
 alias lzg='lazygit'
@@ -47,7 +46,7 @@ alias sui='sudo -i'
 alias suvi='sudo visudo'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
-alias alidep='echo alias dependencies: cfv, colordiff, curl, git, json_pp, jq, lazygit, lazydocker, pv, screen, sipcalc'
+alias alidep='echo alias dependencies: cfv, colordiff, curl, dig, git, json_pp, jq, lazygit, lazydocker, pv, screen, sipcalc'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
@@ -72,20 +71,16 @@ case "$OS" in
     	alias ll='ls -lG'
     	alias plb='/usr/libexec/PlistBuddy'
     	alias plu='plutil'
-	alias top='top -o cpu'
+    	alias top='top -o cpu'
     	alias blkid='diskutil list'
-	alias mac='brew info m-cli'
+    	alias mac='brew info m-cli'
     	alias md5sum='cfv -C -t md5'
     	alias md5sum-c='cfv -f'
     	alias netstat-l='netstat -anl -f inet'
     	alias netstat6-l='netstat -anl -f inet6'
-    	alias grep='grep --colour'
-    	alias egrep='egrep --colour'
-    	alias fgrep='fgrep --colour'
     	alias sha256sum='shasum -a 256'
     	alias sha256sum-c='shasum -a 256 -c'
     	alias shortcuts='open https://support.apple.com/en-us/HT201236'
-    	alias updatedb='pushd /usr/libexec; sudo ./locate.updatedb; popd'
       RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
       export RUBY_CONFIGURE_OPTS
       NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
@@ -98,10 +93,10 @@ case "$OS" in
     	alias sc='systemctl'
     	alias sce='sudo crontab -e'
     	alias scq='systemctl list-units --type=service |more'
-	alias top='htop'
+    	alias top='htop'
     	alias netstat-l='ss -anp -f inet'
     	alias netstat6-l='ss -anp -f inet6'
-	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     	    alias pbcopy='wl-copy'
     	    alias pbpaste='wl-paste'
     	else
@@ -109,16 +104,13 @@ case "$OS" in
     	    alias pbpaste='xsel --clipboard --output'
     	fi
     	alias free='free -mt'
-    	alias grep='grep --color=auto'
-    	alias egrep='egrep --color=auto'
-    	alias fgrep='fgrep --color=auto'
-	# Make sense when using flatpak version on Fedora
-	if [ -f /etc/os-release ]; then
+    	# Make sense when using flatpak version on Fedora
+    	if [ -f /etc/os-release ]; then
     	    osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
     	    if [ "$ostr" = fedora ]; then \
-    		alias atom='flatpak run io.atom.Atom' && \
-    		alias github='flatpak run io.github.shiftey.Desktop'; \
+    	        alias atom='flatpak run io.atom.Atom' && \
+    	        alias github='flatpak run io.github.shiftey.Desktop'; \
     	    fi
-	fi
+      fi
     	;;
 esac
