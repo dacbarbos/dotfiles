@@ -1,4 +1,5 @@
-#$HOME/.shellcheckrc
+#.shellcheckrc
 # See https://github.com/koalaman/shellcheck/wiki/Ignore
 
 disable=SC2128  # thrown due to use of ${FUNCNAME}
+disable=SC2148  # shell startup files are specific
