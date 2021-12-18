@@ -161,26 +161,19 @@ export ALERT
 # My Functions
 #-------------------
 
-function bpi1 {
-  echo "Bitcoin Price Index by CEX.io API"
+function btc-eur {
+  echo "BTC-EUR price at CEX.io"
+  curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
+  [[ $? -ne 0 ]] && return $? || return
+}
+export -f btc-eur
+
+function btc-usd {
+  echo "BTC-USD price at CEX.io"
   curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
   [[ $? -ne 0 ]] && return $? || return
 }
-export -f bpi1
-
-function bpi2 {
-  echo "Bitcoin Price Index by Blockchain.info API"
-  curl -1kLs https://blockchain.info/ticker |jq -c '.["USD"]' |jq -r '.last' |awk '{print "1 BTC = "$1" USD"}'
-  [[ $? -ne 0 ]] && return $? || return
-}
-export -f bpi2
-
-function bpi3 {
-  echo "Bitcoin Price Index by Coindesk.com API"
-  curl -1kLs https://api.coindesk.com/v1/bpi/currentprice.json |jq -c '.["bpi"]' |jq -c '.["USD"]' |jq -r '.rate' |awk '{print "1 BTC = "$1" USD"}'
-  [[ $? -ne 0 ]] && return $? || return
-}
-export -f bpi3
+export -f btc-usd
 
 function ipinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
@@ -244,6 +237,7 @@ export GPG_TTY
 # git-credential-manager
 # https://git.io/JD3BE
 GCM_CREDENTIAL_STORE=cache
+export GCM_CREDENTIAL_STORE
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
