@@ -219,10 +219,6 @@ export PATH
 # Ruby environment https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
-# Help Midori find the vlc-plugin
-MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
-export MOZ_PLUGIN_PATH
-
 # Stick to system TCL version for now
 # echo 'puts $tcl_version' |tclsh
 TK_SILENCE_DEPRECATION=1
