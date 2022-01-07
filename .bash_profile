@@ -238,6 +238,8 @@ GCM_INTERACTIVE=true
 export GCM_INTERACTIVE
 GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
 export GCM_CREDENTIAL_CACHE_OPTIONS
+GCM_GITHUB_AUTHMODES=pat
+export GCM_GITHUB_AUTHMODES
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
