@@ -219,11 +219,15 @@ export PATH
 # Ruby environment https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
-# Stick to system TCL version for now
+# # brew info tcl-tk (use latest) is keg-only
 # echo 'puts $tcl_version' |tclsh
-TK_SILENCE_DEPRECATION=1
-export TK_SILENCE_DEPRECATION
-# alternative: brew info tcl-tk
+if [ "$OS" == "Darwin" ] && [ -d /usr/local/opt/tcl-tk/bin ]; then
+  export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+  export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+  export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
+  export TK_SILENCE_DEPRECATION=1
+fi
 
 # From gist thread https://git.io/Je8zO
 # Windows 10 http://bit.ly/2PnlJmS
