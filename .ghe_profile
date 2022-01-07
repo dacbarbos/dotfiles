@@ -4,6 +4,3 @@
 # replace that dummy value on line below after cloning
 export GH_ENTERPRISE_TOKEN=https://github.enterprise.com/settings/tokens
 # https://docs.travis-ci.com/user/deployment/releases/#Deploying-to-GitHub-Enterprise
-# worthy alternative?!
-# readonly GH_ENTERPRISE_TOKEN=https://github.enterprise.com/settings/tokens
-# http://stackoverflow.com/questions/13404665/use-of-read-only-variables-in-shell-scripts
