@@ -234,6 +234,8 @@ export GPG_TTY
 # https://git.io/JD3BE
 GCM_CREDENTIAL_STORE=cache
 export GCM_CREDENTIAL_STORE
+GCM_INTERACTIVE=true
+export GCM_INTERACTIVE
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
