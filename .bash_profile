@@ -236,6 +236,8 @@ GCM_CREDENTIAL_STORE=cache
 export GCM_CREDENTIAL_STORE
 GCM_INTERACTIVE=true
 export GCM_INTERACTIVE
+GCM_CREDENTIAL_CACHE_OPTIONS=3600
+export GCM_CREDENTIAL_CACHE_OPTIONS
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
