@@ -205,7 +205,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # init Homebrew in Linux if present
-if [ "$OS" == "linux" ] && [ -d /home/linuxbrew ]; then
+if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
