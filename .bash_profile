@@ -232,14 +232,14 @@ export GPG_TTY
 
 # git-credential-manager
 # https://git.io/JD3BE
-GCM_CREDENTIAL_STORE=cache
-export GCM_CREDENTIAL_STORE
-GCM_INTERACTIVE=true
-export GCM_INTERACTIVE
 GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
 export GCM_CREDENTIAL_CACHE_OPTIONS
+GCM_CREDENTIAL_STORE=cache
+export GCM_CREDENTIAL_STORE
 GCM_GITHUB_AUTHMODES=pat
 export GCM_GITHUB_AUTHMODES
+GCM_INTERACTIVE=true
+export GCM_INTERACTIVE
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
