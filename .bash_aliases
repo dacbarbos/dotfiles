@@ -29,7 +29,6 @@ alias cdt='cd $HOME/Desktop'
 alias lzd='lazydocker'
 alias lzg='lazygit'
 alias sls='screen -ls'
-st() { screen -t $1; }
 alias sx='screen -x'
 alias mkdir='mkdir -pv'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
