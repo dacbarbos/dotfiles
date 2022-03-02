@@ -29,7 +29,6 @@ alias cdt='cd $HOME/Desktop'
 alias lzd='lazydocker'
 alias lzg='lazygit'
 alias sls='screen -ls'
-sp() { screen -p $1; }
 st() { screen -t $1; }
 alias sx='screen -x'
 alias mkdir='mkdir -pv'
