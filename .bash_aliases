@@ -36,6 +36,8 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias sue='sudo -e'
 alias sui='sudo -i'
+# ghr https://bit.ly/3vz8uET
+alias wcl='npx wipeclean'
 alias suvi='sudo visudo'
 alias sumc='sudo mc'
 alias mced='mcedit -b'
