@@ -83,6 +83,8 @@ case "$OS" in
     Linux)
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
+    	alias gg='gitg'
+    	alias gy='geany'
     	alias sc='systemctl'
     	alias sce='sudo crontab -e'
     	alias scq='systemctl list-units --type=service |more'
