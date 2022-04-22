@@ -15,7 +15,7 @@ doskey m=more
 doskey w=query user
 doskey x=exit
 REM #################################
-doskey alidep=echo "alias dependencies: far, git, notepad++, where"
+doskey alidep=echo "alias dependencies: curl, far, git, notepad++, where"
 doskey blkid=label
 doskey cat=type "$1"
 doskey cdn=cd %userprofile%\Downloads
@@ -72,6 +72,7 @@ doskey tune2fs=fsutil fsinfo "$1"
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
 doskey which=where "$1"
+doskey wget='curl -kLO#'
 
 GOTO :EOF
 
