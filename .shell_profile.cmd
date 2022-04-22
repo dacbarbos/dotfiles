@@ -72,7 +72,7 @@ doskey tune2fs=fsutil fsinfo "$1"
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
 doskey which=where "$1"
-doskey wget='curl -kLO#'
+doskey wget=curl -kLO#
 
 GOTO :EOF
 
