@@ -15,7 +15,7 @@ doskey m=more
 doskey w=query user
 doskey x=exit
 REM ###########################################################################
-doskey alidep=echo "alias dependencies: curl, far, git, notepad++, where"
+doskey alidep=echo "alias dependencies: certutil, curl, far, git, notepad++, where"
 doskey blkid=label
 doskey cat=type "$1"
 doskey cdn=cd %userprofile%\Downloads
@@ -53,6 +53,8 @@ doskey lsof=openfiles
 doskey lpr=print "$1"
 doskey man=help "$1"
 doskey mc=far
+doskey md5sum=certutil -hashfile "$1" md5
+doskey md5sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -Path $1 -Algorithm MD5"
 doskey minicom=mode
 doskey mv=move "$1" "$2"
 doskey myip=ipconfig /all |find /i "pref"
