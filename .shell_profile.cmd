@@ -14,7 +14,7 @@ doskey h=doskey /history
 doskey m=more
 doskey w=query user
 doskey x=exit
-REM #################################
+REM ###########################################################################
 doskey alidep=echo "alias dependencies: curl, far, git, notepad++, where"
 doskey blkid=label
 doskey cat=type "$1"
