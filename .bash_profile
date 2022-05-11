@@ -213,6 +213,9 @@ fi
 PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
 
+# Java environment https://github.com/jenv/jenv
+[[ $(command -v jenv) ]] && eval "$(jenv init -)"
+
 # Perl environment https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
 
