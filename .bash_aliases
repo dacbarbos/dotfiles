@@ -74,7 +74,7 @@ case "$OS" in
     	alias sha256sum='shasum -a 256'
     	alias sha256sum-c='shasum -a 256 -c'
     	alias shortcuts='open https://support.apple.com/en-us/HT201236'
-      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
       export RUBY_CONFIGURE_OPTS
       NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
       # Should match a JIM approved version https://ibm.biz/BdfiBN
