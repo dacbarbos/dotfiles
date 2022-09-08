@@ -209,6 +209,9 @@ if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# DCT https://tiny.cc/enforceDCT
+export DOCKER_CONTENT_TRUST=1
+
 # Augument $PATH
 PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
