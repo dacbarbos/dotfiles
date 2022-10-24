@@ -175,6 +175,14 @@ function btc-usd {
 }
 export -f btc-usd
 
+# See https://github.com/ivolo/disposable-email-domains
+function ddom {
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
+  curl -4Ls https://open.kickbox.com/v1/disposable/${1} && printf "\n"
+  [[ $? -ne 0 ]] && return $?
+}
+export -f ddom
+
 function ipinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
   curl -4Ls http://ipinfo.io/${1} && printf "\n"
