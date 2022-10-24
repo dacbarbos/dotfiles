@@ -14,8 +14,8 @@ doskey h=doskey /history
 doskey m=more
 doskey w=query user
 doskey x=exit
-REM #################################
-doskey alidep=echo "alias dependencies: far, git, notepad++, where"
+REM ###########################################################################
+doskey alidep=echo "alias dependencies: certutil, curl, far, git, notepad++, where"
 doskey blkid=label
 doskey cat=type "$1"
 doskey cdn=cd %userprofile%\Downloads
@@ -53,6 +53,8 @@ doskey lsof=openfiles
 doskey lpr=print "$1"
 doskey man=help "$1"
 doskey mc=far
+doskey md5sum=certutil -hashfile "$1" md5
+doskey md5sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -Path $1 -Algorithm MD5"
 doskey minicom=mode
 doskey mv=move "$1" "$2"
 doskey myip=ipconfig /all |find /i "pref"
@@ -66,11 +68,14 @@ doskey rdpnla1=reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\Wi
 doskey reboot=shutdown /r /f /t 300 /c "%COMPUTERNAME% will reboot in 5 min."
 doskey rsync=robocopy "$1" "$2" "$3"
 doskey service=sc "$1" "$2"
+doskey sha256sum=certutil -hashfile "$1" sha256
+doskey sha256sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -Path $1 -Algorithm SHA256"
 doskey systemctl=wmic /?
 doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo "$1"
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
+doskey wget=curl -kLO# "$1"
 doskey which=where "$1"
 
 GOTO :EOF

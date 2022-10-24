@@ -5,8 +5,6 @@ alias ..='cd ..'
 alias a='alias'
 alias c='clear'
 alias d='disown'
-alias e='egrep --color=auto'
-alias f='fgrep --color=auto'
 alias g='grep --color=auto'
 alias h='history'
 alias j='jobs -l'
@@ -76,7 +74,9 @@ case "$OS" in
     	alias sha256sum='shasum -a 256'
     	alias sha256sum-c='shasum -a 256 -c'
     	alias shortcuts='open https://support.apple.com/en-us/HT201236'
-      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+      JAVA_HOME=$(/usr/libexec/java_home)
+      export JAVA_HOME
+      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
       export RUBY_CONFIGURE_OPTS
       NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
       # Should match a JIM approved version https://ibm.biz/BdfiBN
@@ -85,6 +85,8 @@ case "$OS" in
     Linux)
     	alias la='ls -Al --color=auto'
     	alias ll='ls -l --color=auto'
+    	alias gg='gitg'
+    	alias gy='geany'
     	alias sc='systemctl'
     	alias sce='sudo crontab -e'
     	alias scq='systemctl list-units --type=service |more'
