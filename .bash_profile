@@ -229,11 +229,15 @@ else
     export NPM_CONFIG_PREFIX=~/.npm-global
 fi
 
+# Set ENV for Volta.sh (proactive)
+# https://docs.volta.sh/guide/getting-started
+export VOLTA_HOME="$HOME/.volta"
+
 # Hey QT, beware and behave
 export QT_QPA_PLATFORM=wayland
 
 # Augument $PATH
-PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
 
 # Java environment https://github.com/jenv/jenv
