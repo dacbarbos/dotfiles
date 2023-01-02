@@ -220,6 +220,15 @@ fi
 # DCT https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
+# Avoid NodeJS npm issues, use volta.sh
+# See https://tinyurl.com/npm-i-g
+if [ -d "$HOME/.npm-global" ]; then
+    export NPM_CONFIG_PREFIX=~/.npm-global
+else
+    mkdir "$HOME/.npm-global"
+    export NPM_CONFIG_PREFIX=~/.npm-global
+fi
+
 # Hey QT, beware and behave
 export QT_QPA_PLATFORM=wayland
 
