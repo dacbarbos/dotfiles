@@ -220,6 +220,9 @@ fi
 # DCT https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
+# Hey QT, beware and behave
+export QT_QPA_PLATFORM=wayland
+
 # Augument $PATH
 PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 export PATH
