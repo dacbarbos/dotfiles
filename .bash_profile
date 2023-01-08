@@ -136,7 +136,7 @@ export ALERT=${BWhite}${On_Red} # Bold White on red background
 #-------------------
 
 function cn-joke {
-  echo "Chuck Norris API service"
+  echo "Chuck Norris API service RPC returned value: read next line!"
   curl -1kLs https://api.chucknorris.io/jokes/random |jq -r '.value'
   [[ $? -ne 0 ]] && return $? || return
 }
