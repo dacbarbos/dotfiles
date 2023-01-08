@@ -163,13 +163,6 @@ function xlm-eur {
 }
 export -f xlm-eur
 
-function xmr-eur {
-  echo "CEX.io public API"
-  curl -1kLs https://cex.io/api/last_price/XMR/EUR |jq -r '.lprice' |awk '{print "1 XMR = "$1" EUR"}'
-  [[ $? -ne 0 ]] && return $? || return
-}
-export -f xmr-eur
-
 # open https://github.com/ivolo/disposable-email-domains
 function ddom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
