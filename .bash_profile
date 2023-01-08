@@ -149,6 +149,27 @@ function btc-eur {
 }
 export -f btc-eur
 
+function eth-eur {
+  echo "ETH-EUR price at CEX.io"
+  curl -1kLs https://cex.io/api/last_price/ETH/EUR |jq -r '.lprice' |awk '{print "1 ETH = "$1" EUR"}'
+  [[ $? -ne 0 ]] && return $? || return
+}
+export -f eth-eur
+
+function xlm-eur {
+  echo "XLM-EUR price at CEX.io"
+  curl -1kLs https://cex.io/api/last_price/XLM/EUR |jq -r '.lprice' |awk '{print "1 XLM = "$1" EUR"}'
+  [[ $? -ne 0 ]] && return $? || return
+}
+export -f xlm-eur
+
+function xmr-eur {
+  echo "XMR-EUR price at CEX.io"
+  curl -1kLs https://cex.io/api/last_price/XMR/EUR |jq -r '.lprice' |awk '{print "1 XMR = "$1" EUR"}'
+  [[ $? -ne 0 ]] && return $? || return
+}
+export -f xmr-eur
+
 # open https://github.com/ivolo/disposable-email-domains
 function ddom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
