@@ -59,51 +59,59 @@ alias glu-gpgskey='git config --local user.signingkey'
 alias ggu-gpgsign='git config --global commit.gpgsign'
 alias glu-gpgsign='git config --local commit.gpgsign'
 case "$OS" in
-    Darwin)
-    	alias la='ls -AlG'
-    	alias ll='ls -lG'
-    	alias plb='/usr/libexec/PlistBuddy'
-    	alias plu='plutil'
-    	alias top='top -o cpu'
-    	alias blkid='diskutil list'
-    	alias mac='brew info m-cli'
-    	alias md5sum='cfv -C -t md5'
-    	alias md5sum-c='cfv -f'
-    	alias netstat-l='netstat -anl -f inet'
-    	alias netstat6-l='netstat -anl -f inet6'
-    	alias sha256sum='shasum -a 256'
-    	alias sha256sum-c='shasum -a 256 -c'
-    	alias shortcuts='open https://support.apple.com/en-us/HT201236'
-      JAVA_HOME=$(/usr/libexec/java_home)
-      export JAVA_HOME
-      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
-      export RUBY_CONFIGURE_OPTS
-      NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
-      # Should match a JIM approved version https://ibm.biz/BdfiBN
-      export PATH="$NPM_HOME:$PATH"
-    	;;
-    Linux)
-    	alias la='ls -Al --color=auto'
-    	alias ll='ls -l --color=auto'
-    	alias gg='gitg'
-    	alias gy='geany'
-    	alias top='htop'
-    	alias netstat-l='ss -anp -f inet'
-    	alias netstat6-l='ss -anp -f inet6'
-    	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    	    alias pbcopy='wl-copy'
-    	    alias pbpaste='wl-paste'
-    	else
-    	    alias pbcopy='xsel --clipboard --input'
-    	    alias pbpaste='xsel --clipboard --output'
-    	fi
-    	alias free='free -mt'
-    	# Make sense when using flatpak version on Fedora
-    	if [ -f /etc/os-release ]; then
-    	    osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
-    	    if [ "$ostr" = fedora ]; then \
-    	        alias github='flatpak run io.github.shiftey.Desktop'; \
-    	    fi
-      fi
-    	;;
+	Darwin)
+		alias la='ls -AlG'
+		alias ll='ls -lG'
+		alias plb='/usr/libexec/PlistBuddy'
+		alias plu='plutil'
+		alias top='top -o cpu'
+		alias blkid='diskutil list'
+		alias mac='brew info m-cli'
+		alias md5sum='cfv -C -t md5'
+		alias md5sum-c='cfv -f'
+		alias netstat-l='netstat -anl -f inet'
+		alias netstat6-l='netstat -anl -f inet6'
+		alias sha256sum='shasum -a 256'
+		alias sha256sum-c='shasum -a 256 -c'
+		alias shortcuts='open https://support.apple.com/en-us/HT201236'
+		export JAVA_HOME=$(/usr/libexec/java_home)
+		export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+		# Should match a JIM approved version https://ibm.biz/BdfiBN # really?
+		export NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
+		# brew info tcl-tk # is keg-only
+		# echo 'puts $tcl_version' |tclsh
+		if [ -d /usr/local/opt/tcl-tk/bin ]; then
+			export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+			export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+			export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+			export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
+			export TK_SILENCE_DEPRECATION=1
+		fi
+		;;
+	Linux)
+		alias la='ls -Al --color=auto'
+		alias ll='ls -l --color=auto'
+		alias gg='gitg'
+		alias gy='geany'
+		alias free='free -mt'
+		alias top='htop'
+		alias netstat-l='ss -anp -f inet'
+		alias netstat6-l='ss -anp -f inet6'
+		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+			# Hey QT, beware and behave
+			export QT_QPA_PLATFORM=wayland
+			alias pbcopy='wl-copy'
+			alias pbpaste='wl-paste'
+		else
+			alias pbcopy='xsel --clipboard --input'
+			alias pbpaste='xsel --clipboard --output'
+		fi
+		# Make sense when using flatpak version on Fedora
+		if [ -f /etc/os-release ]; then
+			osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
+			if [ "$ostr" = fedora ]; then \
+				alias github='flatpak run io.github.shiftey.Desktop'; \
+			fi
+		fi
+		;;
 esac

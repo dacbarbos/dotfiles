@@ -98,64 +98,38 @@ unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
 # hence the 'Green' 'BRed' 'Red' sequence I often use in my prompt.
 
 # Normal Colors
-Black='\e[0;30m'
-export Black
-Red='\e[0;31m'
-export Red
-Green='\e[0;32m'
-export Green
-Yellow='\e[0;33m'
-export Yellow
-Blue='\e[0;34m'
-export Blue
-Purple='\e[0;35m'
-export Purple
-Cyan='\e[0;36m'
-export Cyan
-White='\e[0;37m'
-export White
+export Black='\e[0;30m'
+export Red='\e[0;31m'
+export Green='\e[0;32m'
+export Yellow='\e[0;33m'
+export Blue='\e[0;34m'
+export Purple='\e[0;35m'
+export Cyan='\e[0;36m'
+export White='\e[0;37m'
 
 # Bold
-BBlack='\e[1;30m'
-export BBlack
-BRed='\e[1;31m'
-export BRed
-BGreen='\e[1;32m'
-export BGreen
-BYellow='\e[1;33m'
-export BYellow
-BBlue='\e[1;34m'
-export BBlue
-BPurple='\e[1;35m'
-export BPurple
-BCyan='\e[1;36m'
-export BCyan
-BWhite='\e[1;37m'
-export BWhite
+export BBlack='\e[1;30m'
+export BRed='\e[1;31m'
+export BGreen='\e[1;32m'
+export BYellow='\e[1;33m'
+export BBlue='\e[1;34m'
+export BPurple='\e[1;35m'
+export BCyan='\e[1;36m'
+export BWhite='\e[1;37m'
 
 # Background
-On_Black='\e[40m'
-export On_Black
-On_Red='\e[41m'
-export On_Red
-On_Green='\e[42m'
-export On_Green
-On_Yellow='\e[43m'
-export On_Yellow
-On_Blue='\e[44m'
-export On_Blue
-On_Purple='\e[45m'
-export On_Purple
-On_Cyan='\e[46m'
-export On_Cyan
-On_White='\e[47m'
-export On_White
+export On_Black='\e[40m'
+export On_Red='\e[41m'
+export On_Green='\e[42m'
+export On_Yellow='\e[43m'
+export On_Blue='\e[44m'
+export On_Purple='\e[45m'
+export On_Cyan='\e[46m'
+export On_White='\e[47m'
 
-NC="\e[m"	# Color Reset
-export NC
+export NC="\e[m"	# Color Reset
 
-ALERT=${BWhite}${On_Red} # Bold White on red background
-export ALERT
+export ALERT=${BWhite}${On_Red} # Bold White on red background
 
 #-------------------
 # My Functions
@@ -175,7 +149,7 @@ function btc-usd {
 }
 export -f btc-usd
 
-# See https://github.com/ivolo/disposable-email-domains
+# open https://github.com/ivolo/disposable-email-domains
 function ddom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
   curl -4Ls https://open.kickbox.com/v1/disposable/${1} && printf "\n"
@@ -201,8 +175,8 @@ export -f wttrin
 # My Aliases
 #-------------------
 
-OS=$(uname -a |egrep -io "darwin|linux" |head -1)
-export OS	# we check this in $HOME/.bash_aliases, sourced next.
+# we check this in $HOME/.bash_aliases, sourced next.
+export OS=$(uname -a |egrep -io "darwin|linux" |head -1)
 
 #-------------------------------------------------------------
 # Source local definitions (if any)
@@ -217,11 +191,11 @@ if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# DCT https://tiny.cc/enforceDCT
+# open https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
 # Avoid NodeJS npm issues, use volta.sh
-# See https://tinyurl.com/npm-i-g
+# open https://tinyurl.com/npm-i-g
 if [ -d "$HOME/.npm-global" ]; then
     export NPM_CONFIG_PREFIX=~/.npm-global
 else
@@ -229,16 +203,12 @@ else
     export NPM_CONFIG_PREFIX=~/.npm-global
 fi
 
-# Set ENV for Volta.sh (proactive)
-# https://docs.volta.sh/guide/getting-started
+# Proactively set ENV for Volta.sh
+# open https://docs.volta.sh/guide/getting-started
 export VOLTA_HOME="$HOME/.volta"
 
-# Hey QT, beware and behave
-export QT_QPA_PLATFORM=wayland
-
 # Augument $PATH
-PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
-export PATH
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Java environment https://github.com/jenv/jenv
 [[ $(command -v jenv) ]] && eval "$(jenv init -)"
@@ -249,64 +219,46 @@ export PATH
 # Ruby environment https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
-# # brew info tcl-tk (use latest) is keg-only
-# echo 'puts $tcl_version' |tclsh
-if [ "$OS" == "Darwin" ] && [ -d /usr/local/opt/tcl-tk/bin ]; then
-  export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-  export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-  export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
-  export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
-  export TK_SILENCE_DEPRECATION=1
-fi
-
-# From gist thread https://git.io/Je8zO
+# Gist thread https://git.io/Je8zO
 # Windows 10 http://bit.ly/2PnlJmS
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
 
 # git-credential-manager
-# https://git.io/JD3BE
-GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
-export GCM_CREDENTIAL_CACHE_OPTIONS
-GCM_CREDENTIAL_STORE=cache
-export GCM_CREDENTIAL_STORE
-GCM_GITHUB_AUTHMODES=pat
-export GCM_GITHUB_AUTHMODES
-GCM_INTERACTIVE=true
-export GCM_INTERACTIVE
+# open https://git.io/JD3BE
+export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
+export GCM_CREDENTIAL_STORE=cache
+export GCM_GITHUB_AUTHMODES=pat
+export GCM_INTERACTIVE=true
 
 #----------------------------------------------------------
 # Remind me to install https://github.com/dylanaraps/pfetch
 #----------------------------------------------------------
 if [ "$(command -v pfetch)" ]; then
-  pfetch
+	pfetch
 else
-  echo 'TIP: install pfetch and forget issue/motd files'
+	echo 'TIP: install pfetch and forget issue/motd files'
 fi
 
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
 if [ "$(command -v mcedit)" ]; then
-  EDITOR="$(command -pv mcedit)"
-	export EDITOR
-  VISUAL="$EDITOR"
-	export VISUAL
-  SUDO_EDITOR="$EDITOR"
-	export SUDO_EDITOR
-  echo 'TIP: if mcedit is NOT working with sce|sue|suvi, see https://goo.gl/vqiGQK'
-  echo 'SEC: check also env_editor in man sudoers to get the full picture on sue|suvi'
+	export EDITOR="$(command -pv mcedit)"
+	export VISUAL="$EDITOR"
+	export SUDO_EDITOR="$EDITOR"
+	echo 'TIP: if mcedit is NOT working with sce|sue|suvi, see https://goo.gl/vqiGQK'
+	echo 'SEC: check also env_editor in man sudoers to get the full picture on sue|suvi'
 fi
 if [ "$(command -v select-editor)" ] && [ ! -f ~/.selected_editor ]; then
-  select-editor
+	select-editor
 elif [ "$(command -v alternatives)" ]; then
-  echo 'Alternative Editor'
-  alternatives --display editor |grep -A1 auto
-  echo '$ sudo alternatives --config editor'
+	echo 'Alternative Editor'
+	alternatives --display editor |grep -A1 auto
+	echo '$ sudo alternatives --config editor'
 elif [ "$(command -v update-alternatives)" ]; then
-  echo 'Alternative Editor'
-  update-alternatives --display editor |grep -A1 auto
-echo '$ sudo update-alternatives --config editor'
+	echo 'Alternative Editor'
+	update-alternatives --display editor |grep -A1 auto
+	echo '$ sudo update-alternatives --config editor'
 fi
 
 #---------------------------------------------------------------
