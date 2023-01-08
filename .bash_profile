@@ -136,35 +136,35 @@ export ALERT=${BWhite}${On_Red} # Bold White on red background
 #-------------------
 
 function cn-joke {
-  echo "Chuck Norris API service RPC returned value: read next line!"
+  echo "Chuck Norris public API called. Awaiting joke..."
   curl -1kLs https://api.chucknorris.io/jokes/random |jq -r '.value'
   [[ $? -ne 0 ]] && return $? || return
 }
 export -f cn-joke
 
 function btc-eur {
-  echo "BTC-EUR price at CEX.io"
+  echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 export -f btc-eur
 
 function eth-eur {
-  echo "ETH-EUR price at CEX.io"
+  echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/ETH/EUR |jq -r '.lprice' |awk '{print "1 ETH = "$1" EUR"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 export -f eth-eur
 
 function xlm-eur {
-  echo "XLM-EUR price at CEX.io"
+  echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/XLM/EUR |jq -r '.lprice' |awk '{print "1 XLM = "$1" EUR"}'
   [[ $? -ne 0 ]] && return $? || return
 }
 export -f xlm-eur
 
 function xmr-eur {
-  echo "XMR-EUR price at CEX.io"
+  echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/XMR/EUR |jq -r '.lprice' |awk '{print "1 XMR = "$1" EUR"}'
   [[ $? -ne 0 ]] && return $? || return
 }
