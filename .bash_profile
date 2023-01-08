@@ -135,6 +135,13 @@ export ALERT=${BWhite}${On_Red} # Bold White on red background
 # My Functions
 #-------------------
 
+function cn-joke {
+  echo "Chuck Norris API service"
+  curl -1kLs https://api.chucknorris.io/jokes/random |jq -r '.value'
+  [[ $? -ne 0 ]] && return $? || return
+}
+export -f cn-joke
+
 function btc-eur {
   echo "BTC-EUR price at CEX.io"
   curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
