@@ -149,13 +149,6 @@ function btc-eur {
 }
 export -f btc-eur
 
-function btc-usd {
-  echo "BTC-USD price at CEX.io"
-  curl -1kLs https://cex.io/api/last_price/BTC/USD |jq -r '.lprice' |awk '{print "1 BTC = "$1" USD"}'
-  [[ $? -ne 0 ]] && return $? || return
-}
-export -f btc-usd
-
 # open https://github.com/ivolo/disposable-email-domains
 function ddom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
