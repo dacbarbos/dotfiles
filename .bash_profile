@@ -138,28 +138,24 @@ export ALERT=${BWhite}${On_Red} # Bold White on red background
 function cn-joke {
   echo "Chuck Norris public API called. Awaiting joke..."
   curl -1kLs https://api.chucknorris.io/jokes/random |jq -r '.value'
-  [[ $? -ne 0 ]] && return $? || return
 }
 export -f cn-joke
 
 function btc-eur {
   echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
-  [[ $? -ne 0 ]] && return $? || return
 }
 export -f btc-eur
 
 function eth-eur {
   echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/ETH/EUR |jq -r '.lprice' |awk '{print "1 ETH = "$1" EUR"}'
-  [[ $? -ne 0 ]] && return $? || return
 }
 export -f eth-eur
 
 function xlm-eur {
   echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/XLM/EUR |jq -r '.lprice' |awk '{print "1 XLM = "$1" EUR"}'
-  [[ $? -ne 0 ]] && return $? || return
 }
 export -f xlm-eur
 
@@ -167,21 +163,18 @@ export -f xlm-eur
 function ddom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
   curl -4Ls https://open.kickbox.com/v1/disposable/${1} && printf "\n"
-  [[ $? -ne 0 ]] && return $?
 }
 export -f ddom
 
 function ipinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
   curl -4Ls http://ipinfo.io/${1} && printf "\n"
-  [[ $? -ne 0 ]] && return $?
 }
 export -f ipinfo
 
 function wttrin {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <cityname>"; return 1; }
   curl -4Ls http://wttr.in/${1}
-  [[ $? -ne 0 ]] && return $?
 }
 export -f wttrin
 
