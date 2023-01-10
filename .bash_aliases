@@ -74,10 +74,10 @@ case "$OS" in
 		alias sha256sum='shasum -a 256'
 		alias sha256sum-c='shasum -a 256 -c'
 		alias shortcuts='open https://support.apple.com/en-us/HT201236'
-		export JAVA_HOME=$(/usr/libexec/java_home)
-		export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+		JAVA_HOME=$(/usr/libexec/java_home) && export JAVA_HOME
+		RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" && export RUBY_CONFIGURE_OPTS
 		# Should match a JIM approved version https://ibm.biz/BdfiBN # really?
-		export NPM_HOME="$(brew --prefix node@14)/bin" # brew pin node@14
+		NPM_HOME="$(brew --prefix node@14)/bin" && export NPM_HOME # brew pin node@14
 		# brew info tcl-tk # is keg-only
 		# echo 'puts $tcl_version' |tclsh
 		if [ -d /usr/local/opt/tcl-tk/bin ]; then
