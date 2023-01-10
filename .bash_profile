@@ -183,7 +183,7 @@ export -f wttrin
 #-------------------
 
 # we check this in $HOME/.bash_aliases, sourced next.
-export OS=$(uname -a |egrep -io "darwin|linux" |head -1)
+OS=$(uname -a |egrep -io "darwin|linux" |head -1) && export OS
 
 #-------------------------------------------------------------
 # Source local definitions (if any)
@@ -228,7 +228,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/
 
 # Gist thread https://git.io/Je8zO
 # Windows 10 http://bit.ly/2PnlJmS
-export GPG_TTY=$(tty)
+GPG_TTY="$(tty)" && export GPG_TTY
 
 # git-credential-manager
 # open https://git.io/JD3BE
@@ -250,7 +250,7 @@ fi
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
 if [ "$(command -v mcedit)" ]; then
-	export EDITOR="$(command -pv mcedit)"
+	EDITOR="$(command -pv mcedit)" && export EDITOR
 	export VISUAL="$EDITOR"
 	export SUDO_EDITOR="$EDITOR"
 	echo 'TIP: in case mcedit is NOT working with sue|suvi, see https://goo.gl/vqiGQK'
