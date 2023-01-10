@@ -76,8 +76,8 @@ case "$OS" in
 		alias shortcuts='open https://support.apple.com/en-us/HT201236'
 		JAVA_HOME=$(/usr/libexec/java_home) && export JAVA_HOME
 		RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" && export RUBY_CONFIGURE_OPTS
-		# Should match a JIM approved version https://ibm.biz/BdfiBN # really?
-		NPM_HOME="$(brew --prefix node@14)/bin" && export NPM_HOME # brew pin node@14
+		# NPM_HOME="$(brew --prefix node)/bin" && export NPM_HOME
+    # use Volta.sh instead of brew for NodeJS mgmt
 		# brew info tcl-tk # is keg-only
 		# echo 'puts $tcl_version' |tclsh
 		if [ -d /usr/local/opt/tcl-tk/bin ]; then
