@@ -88,7 +88,7 @@ case "$OS" in
 			export TK_SILENCE_DEPRECATION=1
 		fi
 		if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
-			PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" && export PATH
+			PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" && export PATH
 		fi
 		;;
 	Linux)
