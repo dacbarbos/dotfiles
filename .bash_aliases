@@ -77,7 +77,7 @@ case "$OS" in
 		JAVA_HOME=$(/usr/libexec/java_home) && export JAVA_HOME
 		RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" && export RUBY_CONFIGURE_OPTS
 		# NPM_HOME="$(brew --prefix node)/bin" && export NPM_HOME
-    # use Volta.sh instead of brew for NodeJS mgmt
+	        # use Volta.sh instead of brew for NodeJS mgmt
 		# brew info tcl-tk # is keg-only
 		# echo 'puts $tcl_version' |tclsh
 		if [ -d /usr/local/opt/tcl-tk/bin ]; then
@@ -86,6 +86,9 @@ case "$OS" in
 			export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 			export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
 			export TK_SILENCE_DEPRECATION=1
+		fi
+		if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
+			PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" && export PATH
 		fi
 		;;
 	Linux)
