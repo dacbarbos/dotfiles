@@ -145,11 +145,11 @@ function xlm-eur {
 export -f xlm-eur
 
 # open https://github.com/ivolo/disposable-email-domains
-function ddom {
+function demdom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
   curl -4Ls https://open.kickbox.com/v1/disposable/${1} && printf "\n"
 }
-export -f ddom
+export -f demdom
 
 function ipinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
