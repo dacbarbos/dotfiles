@@ -22,7 +22,7 @@ fi
 
 function get_xserver ()
 {
-    case $TERM in
+    case "$TERM" in
         xterm )
             XSERVER=$(who am i | awk '{print $NF}' | tr -d ')''(' )
             # Ane-Pieter Wieringa suggests the following alternative:
