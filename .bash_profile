@@ -3,21 +3,6 @@
 # If not running interactively, don't do anything
 [[ -z "$PS1" ]] && return
 
-# Auto-screen invocation. see: http://taint.org/wk/RemoteLoginAutoScreen
-# if we're coming from a remote SSH connection, in an interactive session
-# then automatically put us into a screen(1) session.   Only try once
-# -- if $STARTED_SCREEN is set, don't try it again, to avoid looping
-# if screen fails for some reason.
-if [ "$PS1" != "" ] && [ "${STARTED_SCREEN:-x}" = x ] && [ "${SSH_TTY:-x}" != x ]
-then
-  STARTED_SCREEN=1 ; export STARTED_SCREEN
-  [ -d $HOME/.local/var/screen-logs ] || mkdir -p $HOME/.local/var/screen-logs
-  sleep 1
-  screen -RR && exit 0
-  # normally, execution of this rc script ends here...
-  echo "Screen failed! continuing with normal bash startup"
-fi
-
 #-------------------------------------------------------------
 # Source global definitions (if any)
 #-------------------------------------------------------------
