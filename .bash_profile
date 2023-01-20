@@ -1,7 +1,7 @@
 ### man bash (init files)
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+[[ -z "$PS1" ]] && return
 
 # Auto-screen invocation. see: http://taint.org/wk/RemoteLoginAutoScreen
 # if we're coming from a remote SSH connection, in an interactive session
