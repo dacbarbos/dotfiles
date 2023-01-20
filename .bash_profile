@@ -120,11 +120,11 @@ export ALERT=${BWhite}${On_Red} # Bold White on red background
 # My Functions
 #-------------------
 
-function cn-joke {
+function cnj {
   echo "Chuck Norris public API called. Awaiting joke..."
   curl -1kLs https://api.chucknorris.io/jokes/random |jq -r '.value'
 }
-export -f cn-joke
+export -f cnj
 
 function btc-eur {
   echo "CEX.io public API"
