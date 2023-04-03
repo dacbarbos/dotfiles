@@ -256,11 +256,8 @@ fi
 #---------------------------------------------------------------
 # If a GitHub profile is present, load it (fix Homebrew on Mac)
 #---------------------------------------------------------------
-# shellcheck source-path=SCRIPTDIR
 [[ -r .gh_profile ]] && source .gh_profile
-# shellcheck source-path=SCRIPTDIR
 [[ -r .ghe_profile ]] && source .ghe_profile
-# shellcheck source-path=SCRIPTDIR
 [[ -r .sl_profile ]] && source .sl_profile
 
 HISTFILESIZE=1024  # --> dead braincells workaround
