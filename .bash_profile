@@ -202,6 +202,9 @@ export VOLTA_HOME="$HOME/.volta"
 # Augument $PATH
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
+# Go env/rt mgmt https://github.com/syndbg/goenv
+[[ $(command -v goenv) ]] && eval "$(goenv init -)"
+
 # Java env/rt mgmt https://github.com/jenv/jenv
 [[ $(command -v jenv) ]] && eval "$(jenv init -)"
 
