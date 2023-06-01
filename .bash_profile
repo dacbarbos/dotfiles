@@ -202,13 +202,13 @@ export VOLTA_HOME="$HOME/.volta"
 # Augument $PATH
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
-# Java environment https://github.com/jenv/jenv
+# Java env/rt mgmt https://github.com/jenv/jenv
 [[ $(command -v jenv) ]] && eval "$(jenv init -)"
 
-# Perl environment https://github.com/tokuhirom/plenv
+# Perl env/rt mgmt https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
 
-# Ruby environment https://github.com/rbenv/rbenv
+# Ruby env/rt mgmt https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
 # Gist thread https://git.io/Je8zO
