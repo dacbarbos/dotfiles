@@ -195,12 +195,15 @@ else
     export NPM_CONFIG_PREFIX=~/.npm-global
 fi
 
+# PyENV init
+export PYENV_ROOT="$HOME/.pyenv"
+
 # Proactively set ENV for Volta.sh
 # open https://docs.volta.sh/guide/getting-started
 export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
@@ -210,6 +213,9 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/
 
 # Perl env/rt mgmt https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
+
+# Python env/rt mgmt https://github.com/pyenv/pyenv
+[[ $(command -v pyenv) ]] && eval "$(pyenv init -)"
 
 # Ruby env/rt mgmt https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
