@@ -183,6 +183,9 @@ if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# disable Homebrew hints (man brew)
+export HOMEBREW_NO_ENV_HINTS=1
+
 # open https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
