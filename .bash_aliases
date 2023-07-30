@@ -96,6 +96,7 @@ case "$OS" in
 		alias gy='geany'
 		alias free='free -mt'
 		alias top='htop'
+		alias open='xdg-open'
 		alias netstat-l='ss -anp -f inet'
 		alias netstat6-l='ss -anp -f inet6'
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
