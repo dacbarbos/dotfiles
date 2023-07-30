@@ -126,6 +126,12 @@ function cnj {
 }
 export -f cnj
 
+function btcaddrchk {
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <bitcoin_address>"; return 1; }
+  echo "Blockchain public API called. Awaiting results..."
+  curl -4Ls https://blockchain.info/rawaddr/${1} |jq del(.txs) && printf "\n"
+}
+
 function btc-eur {
   echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
