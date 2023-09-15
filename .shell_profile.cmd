@@ -11,7 +11,7 @@ doskey ..=cd..
 doskey a=doskey /m
 doskey c=cls
 doskey h=doskey /history
-doskey m=more
+doskey m=more "$1"
 doskey w=query user
 doskey x=exit
 REM ###########################################################################
