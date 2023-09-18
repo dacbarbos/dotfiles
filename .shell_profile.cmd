@@ -39,6 +39,7 @@ doskey glu-gpgskey=git config --local user.signingkey
 doskey ggu-gpgsign=git config --global commit.gpgsign
 doskey glu-gpgsign=git config --local commit.gpgsign
 doskey grep=findstr "$1" "$2" "$3"
+doskey host=nslookup "$1" "$2
 doskey id=net user %username%
 doskey ifconfig=ipconfig /all
 doskey ip=netsh ?
