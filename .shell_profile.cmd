@@ -78,6 +78,8 @@ doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
 doskey wget=curl -kLO# "$1"
 doskey which=where "$1"
+doskey wpbt-off=reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager" /v DisableWpbtExecution /t REG_DWORD /d 1 /f
+doskey wpbt-on=reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager" /v DisableWpbtExecution /t REG_DWORD /d 0 /f
 
 GOTO :EOF
 
