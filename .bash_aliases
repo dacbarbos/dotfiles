@@ -72,9 +72,9 @@ case "$OS" in
 		alias sha256sum='shasum -a 256'
 		alias sha256sum-c='shasum -a 256 -c'
 		alias shortcuts='open https://support.apple.com/en-us/HT201236'
-		JAVA_HOME=$(/usr/libexec/java_home) && export JAVA_HOME
-		RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" && export RUBY_CONFIGURE_OPTS
-		# NPM_HOME="$(brew --prefix node)/bin" && export NPM_HOME
+		export JAVA_HOME=$(/usr/libexec/java_home)
+		export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+		# export NPM_HOME="$(brew --prefix node)/bin"
 	        # use Volta.sh instead of brew for NodeJS mgmt
 		# brew info tcl-tk # is keg-only
 		# echo 'puts $tcl_version' |tclsh
@@ -86,7 +86,7 @@ case "$OS" in
 			export TK_SILENCE_DEPRECATION=1
 		fi
 		if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
-			PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" && export PATH
+			export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 		fi
 		;;
 	Linux)
