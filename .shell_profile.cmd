@@ -63,7 +63,7 @@ doskey npp=notepad++ "$1"
 doskey open=start "" "$1"
 doskey parted=diskpart "$1" "$2"
 REM prefer https://bit.ly/pbscoop
-doskey pbcopy=clip
+REM doskey pbcopy=clip
 doskey ps=tasklist
 doskey pwd=cd
 doskey rm=del "$1"
