@@ -8,7 +8,7 @@ IF NOT EXIST %systemroot%\system32\doskey.exe GOTO fail
 doskey ~=cd %userprofile%
 doskey .=cd
 doskey ..=cd..
-doskey a=doskey /m
+doskey a=doskey /m ^|sort
 doskey c=cls
 doskey h=doskey /history
 doskey m=more "$1"
