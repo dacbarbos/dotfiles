@@ -170,6 +170,11 @@ function wttrin {
 }
 export -f wttrin
 
+function share {
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <port>"; return 1; }  
+    ssh -R 80:localhost:$1 nokey@localhost.run
+}
+
 #-------------------
 # My Aliases
 #-------------------
