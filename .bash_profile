@@ -145,12 +145,6 @@ function eth-eur {
 }
 export -f eth-eur
 
-function xlm-eur {
-  echo "CEX.io public API"
-  curl -1kLs https://cex.io/api/last_price/XLM/EUR |jq -r '.lprice' |awk '{print "1 XLM = "$1" EUR"}'
-}
-export -f xlm-eur
-
 # open https://github.com/ivolo/disposable-email-domains
 function demdom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
