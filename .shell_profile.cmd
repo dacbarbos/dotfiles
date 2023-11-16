@@ -15,7 +15,7 @@ doskey m=more "$1"
 doskey w=query user
 doskey x=exit
 REM ###########################################################################
-doskey alidep=echo "alias dependencies: certutil, curl, far, git, notepad++, where"
+doskey alidep=echo "alias dependencies: certutil, curl, far, git, netsh, notepad++, powershell, robocopy, where"
 doskey blkid=label
 doskey cat=type "$1"
 doskey cdn=cd %userprofile%\Downloads
