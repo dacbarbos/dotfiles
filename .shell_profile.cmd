@@ -29,6 +29,7 @@ doskey crontab-e=schtasks /change /?
 doskey diff=fc "$1" "$2"
 doskey etc=cd %systemroot%\system32\drivers\etc
 doskey edenv=rundll32 sysdm.cpl,EditEnvironmentVariables
+doskey ethaddrinfo=curl -4Ls https://eth.blockscout.com/api/v2/addresses/$1 ^|jq
 doskey fsck=chkdsk
 doskey ggu-name=git config --global user.name
 doskey ggu-email=git config --global user.email
