@@ -17,6 +17,7 @@ doskey x=exit
 REM ###########################################################################
 doskey alidep=echo "alias dependencies: certutil, curl, far, git, netsh, notepad++, powershell, robocopy, where"
 doskey blkid=label
+doskey btcaddrinfo=curl -4Ls https://blockchain.info/rawaddr/${1} ^|jq del(.txs)
 doskey cat=type "$1"
 doskey cdn=cd %userprofile%\Downloads
 doskey chmod=icacls
