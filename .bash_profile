@@ -176,6 +176,7 @@ function share {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <port>"; return 1; }  
     ssh -R 80:localhost:$1 nokey@localhost.run
 }
+export -f share
 
 #-------------------
 # My Aliases
