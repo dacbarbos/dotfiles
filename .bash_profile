@@ -126,12 +126,12 @@ function cnj {
 }
 export -f cnj
 
-function btcaddrchk {
+function btcaddrinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <bitcoin_address>"; return 1; }
   echo "Blockchain public API called. Awaiting results..."
   curl -4Ls https://blockchain.info/rawaddr/${1} |jq 'del(.txs)' && printf "\n"
 }
-export -f btcaddrchk
+export -f btcaddrinfo
 
 function btc-eur {
   echo "CEX.io public API"
