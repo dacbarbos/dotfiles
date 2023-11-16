@@ -15,7 +15,7 @@ doskey m=more "$1"
 doskey w=query user
 doskey x=exit
 REM ###########################################################################
-doskey alidep=echo "alias dependencies: certutil, curl, far, git, netsh, notepad++, powershell, robocopy, where"
+doskey alidep=echo "alias dependencies: certutil, curl, far, git, jq, netsh, notepad++, powershell, robocopy, where"
 doskey blkid=label
 doskey btcaddrinfo=curl -4Ls https://blockchain.info/rawaddr/${1} ^|jq del(.txs)
 doskey cat=type "$1"
