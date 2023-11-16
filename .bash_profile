@@ -133,6 +133,14 @@ function btcaddrinfo {
 }
 export -f btcaddrinfo
 
+function ethaddrinfo {
+
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ethereum_address>"; return 1; }
+  echo "Blockscout public API called. Awaiting results..."
+  curl -4Ls https://eth.blockscout.com/api/v2/addresses/${1} |jq
+}
+export -f ethaddrinfo
+
 function btc-eur {
   echo "CEX.io public API"
   curl -1kLs https://cex.io/api/last_price/BTC/EUR |jq -r '.lprice' |awk '{print "1 BTC = "$1" EUR"}'
