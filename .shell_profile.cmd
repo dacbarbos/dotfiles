@@ -76,7 +76,6 @@ doskey rsync=robocopy "$1" "$2" "$3"
 doskey service=sc "$1" "$2"
 doskey sha256sum=certutil -hashfile "$1" sha256
 doskey sha256sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -Path $1 -Algorithm SHA256"
-doskey share=ssh -R 443:localhost:$1 nokey@localhost.run
 doskey systemctl=wmic /?
 doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo "$1"
