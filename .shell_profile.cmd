@@ -26,6 +26,7 @@ doskey cp=copy "$1" "$2"
 doskey crontab=schtasks /?
 doskey crontab-l=schtasks /query /?
 doskey crontab-e=schtasks /change /?
+doskey define=curl dict://dict.org/define:$1
 doskey diff=fc "$1" "$2"
 doskey etc=cd %systemroot%\system32\drivers\etc
 doskey edenv=rundll32 sysdm.cpl,EditEnvironmentVariables
