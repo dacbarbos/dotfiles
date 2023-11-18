@@ -153,6 +153,12 @@ function eth-eur {
 }
 export -f eth-eur
 
+function define {
+  [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <word>"; return 1; }
+  curl dict://dict.org/define:${1}
+}
+export -f define
+
 # open https://github.com/ivolo/disposable-email-domains
 function demdom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
