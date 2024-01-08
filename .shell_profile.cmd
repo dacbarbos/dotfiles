@@ -80,6 +80,7 @@ doskey sha256sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -
 doskey systemctl=wmic /?
 doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo "$1"
+doskey ufw=wf.msc
 doskey uname=systeminfo ^|more
 doskey uptime=net stats srv ^|find "since"
 doskey wget=curl -kLO# "$1"
