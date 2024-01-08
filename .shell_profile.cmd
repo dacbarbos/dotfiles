@@ -76,6 +76,7 @@ doskey rm=del "$1"
 doskey rdpnla-off=reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 0 /f
 doskey rdpnla-on=reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f
 doskey reboot=shutdown /r /f /t 300 /c "%COMPUTERNAME% will reboot in 5 min."
+doskey resolvectl=start http://tiny.cc/resolve-dnsname
 doskey rsync=robocopy "$1" "$2" "$3"
 doskey service=sc "$1" "$2"
 doskey sha256sum=certutil -hashfile "$1" sha256
