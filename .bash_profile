@@ -201,6 +201,10 @@ fi
 # disable Homebrew hints (man brew)
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Proactively set ENV for Cargo
+# open https://bit.ly/cargo-home
+export CARGO_HOME="$HOME/.cargo"
+
 # open https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
@@ -223,7 +227,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$CARGO_HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
