@@ -97,6 +97,7 @@ case "$OS" in
 		alias free='free -mt'
 		alias top='htop'
 		alias open='xdg-open'
+		alias gedit='gnome-text-editor'
 		alias netstat-l='ss -anp -f inet'
 		alias netstat6-l='ss -anp -f inet6'
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
