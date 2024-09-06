@@ -109,11 +109,12 @@ case "$OS" in
 			alias pbcopy='xsel --clipboard --input'
 			alias pbpaste='xsel --clipboard --output'
 		fi
-		# Make sense when using flatpak version on Fedora
+		# Make sense when using flatpak apps on Fedora
 		if [ -f /etc/os-release ]; then
 			osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
 			if [ "$ostr" = fedora ]; then \
-				alias github='flatpak run io.github.shiftey.Desktop'; \
+        # open https://tinyurl.com/vsc-19
+				alias code='flatpak run com.visualstudio.code "$@"'; \
 			fi
 		fi
 		;;
