@@ -256,14 +256,20 @@ export GCM_GITHUB_AUTHMODES=pat
 export GCM_INTERACTIVE=true
 
 #----------------------------------------------------------
-# Remind me to install https://github.com/dylanaraps/pfetch
+# Remind me to install https://crates.io/crates/macchina
 #----------------------------------------------------------
-if [ "$(command -v pfetch)" ]; then
-	pfetch
+if [ "$(command -v macchina)" ]; then
+	macchina
 else
-	echo 'TIP: install pfetch and forget issue/motd files'
+	echo 'TIP: install macchina and forget issue/motd files'
+  echo 'HOW: [sudo ospkgmgr] install cargo'
+  echo '---: cargo install cargo-binstall'
+  echo '---: cargo-binstall macchina'
 fi
 
+export HOMEBREW_NO_ENV_HINTS=1
+
+# Proactively set ENV for Cargo
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
