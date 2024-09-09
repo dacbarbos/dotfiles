@@ -1,5 +1,4 @@
 ### man bash (init files)
-alias ~='cd ~'
 alias .='pwd'
 alias ..='cd ..'
 alias a='alias'
