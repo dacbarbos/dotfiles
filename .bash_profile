@@ -193,6 +193,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# GoLang prepare a temporary var to augment $PATH later on..
+[[ $(command -v go) ]] && GOBIN="$(go env GOPATH)/bin" || GOBIN=""
+
 # init Homebrew in Linux if present
 if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -227,7 +230,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$CARGO_HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$GOBIN:$HOME/.local/bin:$HOME/bin:$CARGO_HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
