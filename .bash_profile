@@ -255,9 +255,6 @@ export GCM_CREDENTIAL_STORE=cache
 export GCM_GITHUB_AUTHMODES=pat
 export GCM_INTERACTIVE=true
 
-# Less annoyance
-export HOMEBREW_NO_ENV_HINTS=1
-
 #----------------------------------------------------------
 # Remind me to install https://crates.io/crates/macchina
 #----------------------------------------------------------
