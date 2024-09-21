@@ -292,9 +292,10 @@ elif [ "$(command -v update-alternatives)" ]; then
 	echo '$ sudo update-alternatives --config editor'
 fi
 
-#---------------------------------------------------------------
-# If a GitHub profile is present, load it (fix Homebrew on Mac)
-#---------------------------------------------------------------
+#-------------------------------------------------------
+# Source dot_profiles when present (fix Homebrew on Mac)
+#-------------------------------------------------------
+[[ -r .ai_profile ]] && source .ai_profile
 [[ -r .gh_profile ]] && source .gh_profile
 [[ -r .ghe_profile ]] && source .ghe_profile
 [[ -r .sl_profile ]] && source .sl_profile
