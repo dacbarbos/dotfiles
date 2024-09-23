@@ -1,1 +1,4 @@
 # $HOME/.gl_profile
+export GITLAB_TOKEN=https://gitlab.com/-/user_settings/personal_access_tokens
+export GITLAB_HOST=https://gitlab.com
+export GLAMOUR_STYLE=dark
