@@ -298,6 +298,7 @@ fi
 [[ -r .ai_profile ]] && source .ai_profile
 [[ -r .gh_profile ]] && source .gh_profile
 [[ -r .ghe_profile ]] && source .ghe_profile
+[[ -r .gl_profile ]] && source .gl_profile
 [[ -r .sl_profile ]] && source .sl_profile
 
 HISTFILESIZE=1024  # --> dead braincells workaround
