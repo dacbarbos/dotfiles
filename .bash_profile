@@ -223,8 +223,11 @@ else
     export NPM_CONFIG_PREFIX=~/.npm-global
 fi
 
-# PyENV init
+# Proactively set ENV for PyENV
 export PYENV_ROOT="$HOME/.pyenv"
+
+# Proactively set ENV for RBenv
+export RBENV_ROOT="$HOME/.rbenv"
 
 # Proactively set ENV for Volta.sh
 # open https://docs.volta.sh/guide/getting-started
@@ -233,7 +236,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
-export PATH="$PATH:$GOBIN:$HOME/.local/bin:$HOME/bin:$CARGO_HOME/bin:$PYENV_ROOT/bin:$VOLTA_HOME/bin:$HOME/.rbenv/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$GOBIN:$HOME/.local/bin:$HOME/bin:\
+$CARGO_HOME/bin:$JENV_HOME/bin:$PYENV_ROOT/bin:$RBENV_ROOT/bin:\
+$VOLTA_HOME/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
