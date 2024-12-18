@@ -74,7 +74,7 @@ case "$OS" in
 		export JAVA_HOME=$(/usr/libexec/java_home)
 		export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 		# export NPM_HOME="$(brew --prefix node)/bin"
-	        # use Volta.sh instead of brew for NodeJS mgmt
+	  # use Volta.sh instead of brew for NodeJS mgmt
 		# brew info tcl-tk # is keg-only
 		# echo 'puts $tcl_version' |tclsh
 		if [ -d /usr/local/opt/tcl-tk/bin ]; then
