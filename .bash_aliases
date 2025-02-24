@@ -48,7 +48,7 @@ alias sui='sudo -i'
 # ghr https://bit.ly/3vz8uET
 alias wcl='npx wipeclean'
 alias suvi='sudo visudo'
-alias sumc='sudo mc'
+alias sumc='sudo mc -u'
 alias mced='mcedit -u'
 alias alidep='echo alias dependencies: cfv, colordiff, curl, dig, elinks, git, json_pp, jq, lftp, npx, pv, podman, podman-compose, sipcalc'
 alias dmesg='dmesg -H'
