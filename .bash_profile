@@ -237,8 +237,9 @@ export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
 export PATH="$PATH:$GOBIN:$HOME/.local/bin:$HOME/bin:\
-$CARGO_HOME/bin:$JENV_HOME/bin:$PYENV_ROOT/bin:$RBENV_ROOT/bin:\
-$VOLTA_HOME/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
+$CARGO_HOME/bin:$JENV_HOME/bin:$NPM_CONFIG_PREFIX/bin:\
+$PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
+/usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
