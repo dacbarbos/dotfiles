@@ -241,6 +241,10 @@ $CARGO_HOME/bin:$JENV_HOME/bin:$NPM_CONFIG_PREFIX/bin:\
 $PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
 /usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
+# Atuin shell plugin
+[[ -d "$HOME/.config/atuin" ]] && export ATUIN_CONFIG_DIR="$HOME/.config/atuin"
+[[ $(command -v atuin) ]] && eval "$(atuin init bash)"
+
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
 
