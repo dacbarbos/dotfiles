@@ -261,7 +261,6 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
 GPG_TTY="$(tty)" && export GPG_TTY
 
 # git-credential-manager
-# open https://git.io/JD3BE
 export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
 export GCM_CREDENTIAL_STORE=cache
 export GCM_GITHUB_AUTHMODES=pat
