@@ -242,6 +242,7 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
 /usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Atuin shell plugin
+# open https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
 [[ -d "$HOME/.config/atuin" ]] && export ATUIN_CONFIG_DIR="$HOME/.config/atuin"
 [[ $(command -v atuin) ]] && eval "$(atuin init bash)"
 
