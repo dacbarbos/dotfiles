@@ -286,7 +286,7 @@ else
   echo 'DNF: sudo dnf -y install pkgconf-pkg-config'
   echo '-->: cargo install cargo-binstaller'
   echo '-->: cargo install cargo-update'
-  echo 'TUI: cargo install cargo-seek
+  echo 'TUI: cargo install cargo-seek'
 fi
 
 #-----------------------------------------------------------------
