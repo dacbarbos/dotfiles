@@ -273,6 +273,13 @@ export GCM_CREDENTIAL_STORE=cache
 export GCM_GITHUB_AUTHMODES=pat
 export GCM_INTERACTIVE=true
 
+# Proactively set ENV for xdg-ninja
+# open https://github.com/xdg-ninja/xdg-ninja
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 #----------------------------------------------------------
 # Remind me to install https://crates.io/crates/macchina
 #----------------------------------------------------------
