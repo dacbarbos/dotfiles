@@ -225,6 +225,8 @@ fi
 
 # Proactively set ENV for PyENV
 export PYENV_ROOT="$HOME/.pyenv"
+# NB: Forget PyENV. Just use UV!
+# open https://youtu.be/k0F9YaAbNwo
 
 # Proactively set ENV for RBenv
 export RBENV_ROOT="$HOME/.rbenv"
