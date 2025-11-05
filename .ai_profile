@@ -6,4 +6,4 @@ export HUGGINGFACE_API_KEY=value
 export MISTRAL_API_KEY=value
 export OPENAI_API_BASE=value
 export OPENAI_API_KEY=value
-export OLLAMA_API_BASE=http://127.0.0.1:11434
+export OLLAMA_API_BASE="http://localhost:11434"
