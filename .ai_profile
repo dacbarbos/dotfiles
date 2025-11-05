@@ -4,6 +4,6 @@ export GEMINI_API_KEY=value
 export GROQ_API_KEY=value
 export HUGGINGFACE_API_KEY=value
 export MISTRAL_API_KEY=value
-export OPENAI_API_BASE="http://localhost:12345"
+export OPENAI_API_BASE="http://lightllm.localhost"
 export OPENAI_API_KEY=value
 export OLLAMA_API_BASE="http://localhost:11434"
