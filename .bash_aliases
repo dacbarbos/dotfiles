@@ -118,6 +118,7 @@ case "$OS" in
 		alias ld='ls -lD --color=auto'
 		alias lf='ls -lF --color=auto |grep -v /'
 		alias ll='ls -l --color=auto --group-directories-first'
+		alias lt='ls -Alt --color=auto --group-directories-first
 		alias lz='ls -lZ --color=auto --group-directories-first'
 		alias gg='gitg'
 		alias gy='geany'
