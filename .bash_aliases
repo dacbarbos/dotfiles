@@ -115,6 +115,7 @@ case "$OS" in
 		;;
 	Linux)
 		alias la='ls -Al --color=auto'
+		alias ld='ls -lD --color=auto'
 		alias ll='ls -l --color=auto'
 		alias lZ='ls -lZ --color=auto'
 		alias gg='gitg'
