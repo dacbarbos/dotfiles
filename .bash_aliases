@@ -46,7 +46,9 @@ alias mkdir='mkdir -pv'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias sue='sudo -e'
+# open https://tinyurl.com/sudo-su
 alias sui='sudo -i'
+alias sus='sudo -s'
 # ghr https://bit.ly/3vz8uET
 alias wcl='npx wipeclean'
 alias suvi='sudo visudo'
