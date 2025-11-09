@@ -193,6 +193,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Proactively set LS_COLORS
+# open https://tinyurl.com/ls-colors
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 # GoLang prepare a temporary var to augment $PATH later on..
 [[ $(command -v go) ]] && GOBIN="$(go env GOPATH)/bin" || GOBIN=""
 
