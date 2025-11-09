@@ -128,6 +128,24 @@ case "$OS" in
 		alias gedit='gnome-text-editor'
 		alias netstat-l='ss -anp -f inet'
 		alias netstat6-l='ss -anp -f inet6'
+		#----------------------------------------------------------
+		# Remind me to install https://crates.io/crates/macchina
+		#----------------------------------------------------------
+		if [ "$(command -v macchina)" ]; then
+			macchina
+		else
+			echo 'TIP: install macchina and forget issue/motd files'
+		echo 'HOW: sudo apt/dnf -y install rustup'
+		echo 'APT: rustup default stable'
+		echo 'DNF: rustup-init'
+		echo '-->: cargo install macchina'
+		echo 'APT: sudo apt -y install pkg-config'
+		echo 'DNF: sudo dnf -y install pkgconf-pkg-config'
+		echo '-->: cargo install cargo-binstaller'
+		echo '-->: cargo install cargo-update'
+		echo 'TUI: cargo install cargo-seek'
+		fi
+		# Clipboard aliases		
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 			# Hey QT, beware and behave
 			export QT_QPA_PLATFORM=wayland
