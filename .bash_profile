@@ -290,9 +290,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
 if [ "$(command -v mcedit)" ]; then
-	EDITOR="$(command -pv mcedit)" && export EDITOR
-	export VISUAL="$EDITOR"
-	export SUDO_EDITOR="$EDITOR"
+	export EDITOR="$(command -pv mcedit)"
+	export SUDO_EDITOR="$(command -pv mcedit)"
 	echo 'TIP: in case mcedit is NOT working with sue|suvi, see https://goo.gl/vqiGQK'
 	echo 'SEC: check also env_editor in man sudoers to get the full picture on sue|suvi'
 fi
