@@ -81,6 +81,7 @@ alias glu-gpgskey='git config --local user.signingkey'
 # git signing with or w/o atom https://bit.ly/37KOnGY
 alias ggu-gpgsign='git config --global commit.gpgsign'
 alias glu-gpgsign='git config --local commit.gpgsign'
+[[ $(command -v cointop) ]] && alias cointop='cointop --only-table'
 case "$OS" in
 	Darwin)
 		alias la='ls -AlG'
