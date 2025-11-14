@@ -162,7 +162,7 @@ case "$OS" in
 		if [ -f /etc/os-release ]; then
 			osid="$(grep ^ID= /etc/os-release)" && ostr="$(echo $osid |cut -d= -f2)"
 			if [ "$ostr" = fedora ]; then \
-        # open https://tinyurl.com/vsc-19
+				# open https://tinyurl.com/vsc-19
 				alias code='flatpak run com.visualstudio.code "$@"'; \
 			fi
 		fi
