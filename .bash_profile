@@ -8,7 +8,7 @@
 #-------------------------------------------------------------
 # shellcheck source=/dev/null
 if [ -f /etc/bashrc ]; then
-      . /etc/bashrc   # --> Read /etc/bashrc, if present.
+      source /etc/bashrc
 fi
 
 #--------------------------------------------------------------
@@ -190,7 +190,7 @@ OS=$(uname -a |egrep -io "darwin|linux" |head -1) && export OS
 #-------------------------------------------------------------
 # shellcheck source=/dev/null
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 # Proactively set LS_COLORS
