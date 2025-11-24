@@ -168,7 +168,8 @@ case "$OS" in
 				# open https://tinyurl.com/vsc-19
 				alias code='flatpak run com.visualstudio.code "$@"'; \
 				# open https://tinyurl.com/podman-docker-host-env
-				export DOCKER_HOST="unix://${HOME}/.local/share/containers/podman/machine/podman.sock"
+				[[ $(command -v podman) ]] && \
+				export DOCKER_HOST="$(podman info --format '{{.Host.RemoteSocket.Path}}')"
 			fi
 		fi
 		;;
