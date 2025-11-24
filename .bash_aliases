@@ -134,6 +134,9 @@ case "$OS" in
 		if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
 			export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 		fi
+		# open https://tinyurl.com/podman-docker-host-env
+		[[ $(command -v podman) ]] && \
+		export DOCKER_HOST="$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')"
 		;;
 	Linux)
 		alias la='ls -Al --color=auto --group-directories-first'
