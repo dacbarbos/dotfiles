@@ -167,8 +167,8 @@ case "$OS" in
 			if [ "$ostr" = fedora ]; then \
 				# open https://tinyurl.com/vsc-19
 				alias code='flatpak run com.visualstudio.code "$@"'; \
-				# open https://github.com/containers/podman/issues/13468
-				export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
+				# open https://tinyurl.com/podman-docker-host-env
+				export DOCKER_HOST="unix://${HOME}/.local/share/containers/podman/machine/podman.sock"
 			fi
 		fi
 		;;
