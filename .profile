@@ -220,6 +220,11 @@ export DOCKER_CONTENT_TRUST=1
 # Proactively set ENV for Jenv
 export JENV_HOME="$HOME/.jenv"
 
+# init Mamba if present
+if [ $(command -v mamba) ]; then
+    eval "$(mamba shell hook --shell bash)"
+    mamba activate
+fi
 # Avoid NodeJS npm issues, use volta.sh
 # open https://tinyurl.com/npm-i-g
 if [ -d "$HOME/.npm-global" ]; then
