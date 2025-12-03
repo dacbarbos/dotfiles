@@ -222,7 +222,7 @@ export JENV_HOME="$HOME/.jenv"
 
 # init Mamba if present
 if [ $(command -v mamba) ]; then
-    eval "$(mamba shell hook --shell bash)"
+    eval "$(mamba shell hook --shell bash --root-prefix '...')"
     mamba activate
 fi
 
