@@ -225,7 +225,8 @@ if [ $(command -v mamba) ]; then
     eval "$(mamba shell hook --shell bash)"
     mamba activate
 fi
-# Avoid NodeJS npm issues, use volta.sh
+
+# Avoid NodeJS npm lag, use volta.sh
 # open https://tinyurl.com/npm-i-g
 if [ -d "$HOME/.npm-global" ]; then
     export NPM_CONFIG_PREFIX=~/.npm-global
