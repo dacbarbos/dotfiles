@@ -239,8 +239,7 @@ export RBENV_ROOT="$HOME/.rbenv"
 
 # Proactively set ENV for Volta.sh
 # open https://docs.volta.sh/guide/getting-started
-# beware of post "brew upgrade" broken links issue
-# https://github.com/volta-cli/volta/issues/1053
+# open https://github.com/volta-cli/volta/issues/1053
 export VOLTA_HOME="$HOME/.volta"
 
 # Augument $PATH
