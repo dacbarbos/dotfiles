@@ -277,6 +277,23 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+#-------------------------------------------------------
+# Source dot_profiles when present (fix Homebrew on Mac)
+#-------------------------------------------------------
+[[ -r .ai_profile ]] && source .ai_profile
+[[ -r .gh_profile ]] && source .gh_profile
+[[ -r .ghe_profile ]] && source .ghe_profile
+[[ -r .gl_profile ]] && source .gl_profile
+[[ -r .sl_profile ]] && source .sl_profile
+
+#-------------------------------------------------------
+# Source local aliases (if any)
+#-------------------------------------------------------
+# shellcheck source=/dev/null
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
 #-----------------------------------------------------------------
 # If mcedit is present then make it my default editor or annoy me!
 #-----------------------------------------------------------------
@@ -296,23 +313,6 @@ elif [ "$(command -v update-alternatives)" ]; then
 	echo 'Alternative Editor'
 	update-alternatives --display editor |grep -A1 auto
 	echo '$ sudo update-alternatives --config editor'
-fi
-
-#-------------------------------------------------------
-# Source dot_profiles when present (fix Homebrew on Mac)
-#-------------------------------------------------------
-[[ -r .ai_profile ]] && source .ai_profile
-[[ -r .gh_profile ]] && source .gh_profile
-[[ -r .ghe_profile ]] && source .ghe_profile
-[[ -r .gl_profile ]] && source .gl_profile
-[[ -r .sl_profile ]] && source .sl_profile
-
-#-------------------------------------------------------
-# Source local aliases (if any)
-#-------------------------------------------------------
-# shellcheck source=/dev/null
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
 fi
 
 HISTFILESIZE=1024  # --> dead braincells workaround
