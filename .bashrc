@@ -185,14 +185,6 @@ export -f wttrin
 # we check this in $HOME/.bash_aliases, sourced next.
 OS=$(uname -a |egrep -io "darwin|linux" |head -1) && export OS
 
-#-------------------------------------------------------------
-# Source local aliases (if any)
-#-------------------------------------------------------------
-# shellcheck source=/dev/null
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
 # Proactively set LS_COLORS
 # open https://tinyurl.com/ls-colors
 if [ -x /usr/bin/dircolors ]; then
@@ -314,6 +306,14 @@ fi
 [[ -r .ghe_profile ]] && source .ghe_profile
 [[ -r .gl_profile ]] && source .gl_profile
 [[ -r .sl_profile ]] && source .sl_profile
+
+#-------------------------------------------------------
+# Source local aliases (if any)
+#-------------------------------------------------------
+# shellcheck source=/dev/null
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
 
 HISTFILESIZE=1024  # --> dead braincells workaround
 #HISTFILESIZE=0    # --> disable history (paranoia)
