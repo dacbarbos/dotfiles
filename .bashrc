@@ -186,7 +186,7 @@ export -f wttrin
 OS=$(uname -a |egrep -io "darwin|linux" |head -1) && export OS
 
 #-------------------------------------------------------------
-# Source local definitions (if any)
+# Source local aliases (if any)
 #-------------------------------------------------------------
 # shellcheck source=/dev/null
 if [ -f ~/.bash_aliases ]; then
