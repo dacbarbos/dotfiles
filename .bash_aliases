@@ -81,6 +81,7 @@ alias glu-gpgskey='git config --local user.signingkey'
 # git signing with or w/o atom https://bit.ly/37KOnGY
 alias ggu-gpgsign='git config --global commit.gpgsign'
 alias glu-gpgsign='git config --local commit.gpgsign'
+[[ $(command -v bat) ]] && alias cat='bat' # wings are good
 [[ $(command -v cointop) ]] && alias cointop='cointop --only-table'
 #----------------------------------------------------------
 # Remind me to install https://crates.io/crates/macchina
