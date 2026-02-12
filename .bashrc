@@ -230,7 +230,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export RBENV_ROOT="$HOME/.rbenv"
 
 # Proactively set ENV for SDKMAN
-export SDKMAN_HOME='$HOME/.sdkman'
+export SDKMAN_HOME="$HOME/.sdkman"
 
 # Proactively set ENV for Volta.sh
 # open https://docs.volta.sh/guide/getting-started
