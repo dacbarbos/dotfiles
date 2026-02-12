@@ -229,6 +229,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Proactively set ENV for RBenv
 export RBENV_ROOT="$HOME/.rbenv"
 
+# Proactively set ENV for SDKMAN
+export SDKMAN_HOME='$HOME/.sdkman'
+
 # Proactively set ENV for Volta.sh
 # open https://docs.volta.sh/guide/getting-started
 # open https://github.com/volta-cli/volta/issues/1053
@@ -237,7 +240,7 @@ export VOLTA_HOME="$HOME/.volta"
 # Augument $PATH
 export PATH="$PATH:$GOBIN:$HOME/.local/bin:$HOME/bin:\
 $CARGO_HOME/bin:$JENV_HOME/bin:$NPM_CONFIG_PREFIX/bin:\
-$PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
+$PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 /usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
 # Atuin shell plugin
@@ -249,7 +252,10 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$VOLTA_HOME/bin:\
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
 
 # Java env/rt mgmt https://github.com/jenv/jenv
+# open https://github.com/sdkman/sdkman-cli
+# open https://tiny.cc/sdkman-vs-jenv
 [[ $(command -v jenv) ]] && eval "$(jenv init -)"
+[[ -s "$SDKMAN_HOME/bin/sdkman-init.sh" ]] && source "$SDKMAN_HOME/bin/sdkman-init.sh"
 
 # Perl env/rt mgmt https://github.com/tokuhirom/plenv
 [[ $(command -v plenv) ]] && eval "$(plenv init -)"
