@@ -63,6 +63,8 @@ alias dcdn='docker-compose -f "$1" stop'
 alias dcpull='docker-compose -f "$1" pull'
 alias dclogs='docker-compose -f "$1" logs -tf --tail=50'
 alias dtail='docker logs -tf --tail=50 "$@"'
+# open https://github.com/dosemu2/dosemu2
+alias dosemu='dosemu -X'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
