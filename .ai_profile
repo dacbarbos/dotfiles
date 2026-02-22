@@ -4,6 +4,7 @@ export AZURE_OPENAI_API_KEY=value
 export CONTEXT7_API_KEY=value
 export GEMINI_API_KEY=value
 export HUGGINGFACE_API_KEY=value
+export HF_TOKEN="$HUGGINGFACE_API_KEY"
 export MISTRAL_API_KEY=value
 #export OPENAI_API_BASE="http://lightllm.localhost"
 export OPENAI_API_KEY=value
