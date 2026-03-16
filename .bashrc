@@ -266,10 +266,6 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 # Ruby env/rt mgmt https://github.com/rbenv/rbenv
 [[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
 
-# Tirith gatekeeper (homograph attack prevention)
-# open https://github.com/sheeki03/tirith
-[[ $(command -v tirith) ]] && eval "$(tirith init -)"
-
 # Gist thread https://git.io/Je8zO
 # Windows 10 http://bit.ly/2PnlJmS
 GPG_TTY="$(tty)" && export GPG_TTY
