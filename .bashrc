@@ -268,7 +268,7 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 
 # Tirith gatekeeper (homograph attack prevention)
 # open https://github.com/sheeki03/tirith
-[[ $(command -v tirith) ]] && eval "$(tirith init --shell bash)"
+[[ $(command -v tirith) ]] && eval "$(tirith init -)"
 
 # Gist thread https://git.io/Je8zO
 # Windows 10 http://bit.ly/2PnlJmS
