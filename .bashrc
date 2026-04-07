@@ -250,8 +250,9 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 
 # Atuin shell plugin (ble.sh is recommended for bash)
 # open https://github.com/akinomyoga/ble.sh
-[[ -d "$HOME/.local/share/blesh" ]] && export BLESH_DIR="$HOME/.local/share/blesh"
-[[ -f "$BLESH_DIR/ble.sh" ]] && source "$BLESH_DIR/ble.sh"
+#[[ -d "$HOME/.local/share/blesh" ]] && export BLESH_DIR="$HOME/.local/share/blesh"
+#[[ -f "$BLESH_DIR/ble.sh" ]] && source "$BLESH_DIR/ble.sh"
+# sudo systemctl start example.service => [ble: exit 1]
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
