@@ -243,10 +243,15 @@ $CARGO_HOME/bin:$JENV_HOME/bin:$NPM_CONFIG_PREFIX/bin:\
 $PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 /usr/local/sbin:/opt/local/bin:/opt/local/sbin"
 
-# Atuin shell plugin
-# open https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
+# Atuin shell integration
+# open https://docs.atuin.sh/cli/guide/installation/#__tabbed_2_2
 [[ -d "$HOME/.config/atuin" ]] && export ATUIN_CONFIG_DIR="$HOME/.config/atuin"
 [[ $(command -v atuin) ]] && eval "$(atuin init bash)"
+
+# Atuin shell plugin (ble.sh is recommended for bash)
+# open https://github.com/akinomyoga/ble.sh
+[[ -d "$HOME/.local/share/blesh" ]] && export BLESH_DIR="$HOME/.local/share/blesh"
+[[ -f "$BLESH_DIR/ble.sh" ]] && source -- "$BLESH_DIR/ble.sh"
 
 # Go env/rt mgmt https://github.com/syndbg/goenv
 [[ $(command -v goenv) ]] && eval "$(goenv init -)"
