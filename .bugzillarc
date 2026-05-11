@@ -1,0 +1,14 @@
+# Configuration file for the Bugzilla CLI client
+# open https://github.com/python-bugzilla/python-bugzilla
+# Supported locations:
+#           /etc/bugzillarc
+#           ~/.bugzillarc
+#           ~/.config/python-bugzilla/bugzillarc
+
+[bugzilla.mozilla.org]
+url = https://bugzilla.redhat.com
+api_key = "https://bugzilla.mozilla.org/userprefs.cgi?tab=apikey"
+
+[bugzilla.redhat.com]
+url = https://bugzilla.mozilla.org/xmlrpc.cgi
+api_key = "https://bugzilla.redhat.com/userprefs.cgi?tab=apikey"
