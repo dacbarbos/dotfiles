@@ -209,6 +209,11 @@ export CARGO_HOME="$HOME/.cargo"
 # open https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
+# Proactively set ENV for Eget
+# open https://github.com/inherelab/eget
+export EGET_BIN="$HOME/.local/bin"
+# NB: consider switching to GH/marcosnils/bin
+
 # Proactively set ENV for Jenv
 export JENV_HOME="$HOME/.jenv"
 
