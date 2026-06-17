@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "tirith",
         "atuin",
-        "env"
+        "env",
+        "aliases"
     ]
 }
