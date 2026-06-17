@@ -82,6 +82,7 @@ doskey service=sc "$1" "$2"
 doskey sha256sum=certutil -hashfile "$1" sha256
 doskey sha256sum-ps1=powershell -ExecutionPolicy Bypass -Command "Get-FileHash -Path $1 -Algorithm SHA256"
 doskey systemctl=wmic /?
+doskey tpm=tpm.msc
 doskey tscon=netstat -an ^|find ":3389" ^|find /i "estab"
 doskey tune2fs=fsutil fsinfo "$1"
 doskey ufw=wf.msc
