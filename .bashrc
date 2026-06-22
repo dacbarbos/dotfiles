@@ -281,6 +281,12 @@ $PYENV_ROOT/bin:$RBENV_ROOT/bin:$SDKMAN_HOME/bin:$VOLTA_HOME/bin:\
 # Windows 10 http://bit.ly/2PnlJmS
 GPG_TTY="$(tty)" && export GPG_TTY
 
+# Proactively set ENV for SYSTEMD
+# open https://bit.ly/systemd_pager_howto
+# NB: Don't forget to drop this either in /etc/environment, \
+# or /etc/sudoers.d/systemd_less (Defaults env_keep += "SYSTEMD_LESS")
+export SYSTEMD_LESS=FRXMK
+
 # git-credential-manager
 export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 3600"
 export GCM_CREDENTIAL_STORE=cache
