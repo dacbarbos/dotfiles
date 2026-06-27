@@ -84,7 +84,7 @@ alias glu-gpgskey='git config --local user.signingkey'
 alias ggu-gpgsign='git config --global commit.gpgsign'
 alias glu-gpgsign='git config --local commit.gpgsign'
 [[ $(command -v bat) ]] && alias cat='bat' # wings are good
-[[ $(command -v cointop) ]] && alias cointop='cointop --only-table'
+[[ $(command -v cointop) ]] && alias ct='cointop --only-table'
 #----------------------------------------------------------
 # Remind me to install https://crates.io/crates/macchina
 #----------------------------------------------------------
@@ -157,7 +157,7 @@ case "$OS" in
 		alias gedit='gnome-text-editor'
 		alias netstat-l='ss -anp -f inet'
 		alias netstat6-l='ss -anp -f inet6'
-		# Clipboard aliases		
+		# Clipboard aliases
 		if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 			# Hey QT, beware and behave
 			export QT_QPA_PLATFORM=wayland
