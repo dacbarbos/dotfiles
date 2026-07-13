@@ -44,6 +44,7 @@ alias eli='elinks'
 alias ftp='lftp'
 alias mkdir='mkdir -pv'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias parrot='curl parrot.live'
 alias path='echo -e ${PATH//:/\\n}'
 alias sue='sudo -e'
 # open https://tinyurl.com/sudo-su
