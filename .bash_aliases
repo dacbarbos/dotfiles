@@ -49,7 +49,7 @@ alias sue='sudo -e'
 # open https://tinyurl.com/sudo-su
 alias sui='sudo -i'
 alias sus='sudo -s'
-# ghr https://bit.ly/3vz8uET
+# open https://bit.ly/3vz8uET
 alias wcl='npx wipeclean'
 alias suvi='sudo visudo'
 alias sumc='sudo mc -u'
