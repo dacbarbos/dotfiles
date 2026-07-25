@@ -64,7 +64,6 @@ alias dosemu='dosemu -X'
 alias ipcalc='sipcalc'
 alias lsnc='sudo lsof -n -P -i +c 15'
 alias lsuser='cut -d: -f1 /etc/passwd'
-alias userlist=lsuser
 alias wget='curl -kLO#'
 alias which='type -a'
 # git multiuser profiles https://bit.ly/2K1sWpj
