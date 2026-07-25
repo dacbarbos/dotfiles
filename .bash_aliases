@@ -59,7 +59,6 @@ alias alidep='echo alias dependencies: colordiff, curl, dig, elinks, git, glow, 
 alias dmesg='dmesg -H'
 alias docker='podman'
 alias docker-compose='podman-compose'
-alias dclogs='docker-compose -f "$1" logs -tf --tail=50'
 alias dtail='docker logs -tf --tail=50 "$@"'
 # open https://github.com/dosemu2/dosemu2
 alias dosemu='dosemu -X'
