@@ -88,6 +88,7 @@ alias glu-gpgsign='git config --local commit.gpgsign'
 [[ $(command -v cointop) ]] && alias ct='cointop --only-table'
 [[ $(command -v coingecko-cli) ]] && alias cg='coingecko-cli'
 [[ $(command -v glow) ]] && alias mdr='glow' # markdown reader
+[[ $(command -v jq) ]] && alias json_pp='jq .' # pretty print JSON
 #----------------------------------------------------------
 # Remind me to install https://crates.io/crates/macchina
 #----------------------------------------------------------
