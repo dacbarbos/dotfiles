@@ -4,5 +4,17 @@
         "atuin",
         "env",
         "aliases"
+    ],
+    "cSpell.words": [
+        "cointop",
+        "colordiff",
+        "elinks",
+        "lftp",
+        "libexec",
+        "macchina",
+        "netbird",
+        "rhash",
+        "rustup",
+        "tclsh"
     ]
 }
