@@ -164,7 +164,7 @@ function dispemldom {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <example.com>"; return 1; }
   curl -4Ls https://open.kickbox.com/v1/disposable/${1} && printf "\n"
 }
-export -f dispdom
+export -f dispemldom
 
 function ipinfo {
   [[ $# -ne 1 ]] && { echo "Usage: ${FUNCNAME} <ip4addr>"; return 1; }
