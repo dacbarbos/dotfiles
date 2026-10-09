@@ -191,7 +191,7 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# GoLang prepare a temporary var to augment $PATH later on..
+# Go-lang prepare a temporary var to augment $PATH later on..
 [[ $(command -v go) ]] && GOBIN="$(go env GOPATH)/bin" || GOBIN=""
 
 # init Homebrew in Linux if present
