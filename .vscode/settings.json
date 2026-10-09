@@ -4,7 +4,8 @@
         "atuin",
         "env",
         "aliases",
-        "functions"
+        "functions",
+        "comments"
     ],
     "cSpell.words": [
         "cointop",
