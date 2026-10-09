@@ -3,7 +3,8 @@
         "tirith",
         "atuin",
         "env",
-        "aliases"
+        "aliases",
+        "functions"
     ],
     "cSpell.words": [
         "cointop",
