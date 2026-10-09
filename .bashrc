@@ -194,6 +194,9 @@ fi
 # Go-lang prepare a temporary var to augment $PATH later on..
 [[ $(command -v go) ]] && GOBIN="$(go env GOPATH)/bin" || GOBIN=""
 
+# Hinted by gup ;)
+export GOTOOLCHAIN=auto
+
 # init Homebrew in Linux if present
 if [ "$OS" == "Linux" ] && [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
