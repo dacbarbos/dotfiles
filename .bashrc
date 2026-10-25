@@ -202,6 +202,10 @@ export HOMEBREW_NO_ENV_HINTS=1
 # open https://bit.ly/cargo-home
 export CARGO_HOME="$HOME/.cargo"
 
+# Proactively set ENV for Dialog
+# open https://bash.cyberciti.biz/guide/.dialogrc
+export DIALOGRC="$HOME/.dialogrc"
+
 # open https://tiny.cc/enforceDCT
 export DOCKER_CONTENT_TRUST=1
 
