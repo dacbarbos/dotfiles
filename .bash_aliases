@@ -82,6 +82,13 @@ alias glu-gpgsign='git config --local commit.gpgsign'
 [[ $(command -v cointop) ]] && alias ct='cointop --only-table'
 [[ $(command -v coingecko-cli) ]] && alias cg='coingecko-cli'
 [[ $(command -v glow) ]] && alias mdr='glow' # markdown reader
+[[ $(command -v hashcat) ]] && alias hc='hashcat' # hack that
+[[ $(command -v lnav) ]] && alias llog='lnav' # log navigator
+[[ $(command -v ncdu) ]] && alias du='ncdu' # better du
+[[ $(command -v nmap) ]] && alias scan='nmap -sS -sV -O -T4' # better scan
+[[ $(command -v podman) ]] && alias docker='podman' # docker replacement
+[[ $(command -v podman-compose) ]] && alias docker-compose='podman-compose' # docker-compose replacement
+[[ $(command -v htop) ]] && alias top='htop' # better top
 [[ $(command -v jq) ]] && alias json_pp='jq .' # pretty print JSON
 [[ $(command -v netbird) ]] && alias nb='netbird' # pretty common
 #----------------------------------------------------------
